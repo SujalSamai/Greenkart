@@ -20,7 +20,10 @@ export default function Register() {
                   : "Create your GreenKart account."}
               </p>
               {isRegisterd ? (
-                <button className="inline-flex w-full items-center justify-center bg-black px-6 py-4 text-lg rounded-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide">
+                <button
+                  className="inline-flex items-center justify-center bg-[#295339] mt-10 px-6 py-4 text-lg rounded-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide"
+                  onClick={() => router.push("/login")}
+                >
                   Login
                 </button>
               ) : (
@@ -39,12 +42,12 @@ export default function Register() {
                       />
                     ) : null
                   )}
-                  <button className="inline-flex w-full items-center justify-center bg-black px-6 py-4 text-lg rounded-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide">
+                  <button className="inline-flex w-full items-center justify-center bg-[#295339] px-6 py-4 text-lg rounded-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide">
                     Register
                   </button>
                   <div className="flex flex-col gap-2">
                     <p>
-                      Already have an account? <a href="/login">Login here.</a>
+                      Already have an account? <a href="/login" className="hover:underline hover:underline-offset-2">Login here.</a>
                     </p>
                   </div>
                 </div>

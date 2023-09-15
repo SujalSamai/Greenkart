@@ -1,11 +1,9 @@
 "use client";
-import { useRouter } from "next/navigation";
 import InputComponent from "../components/FormElements/InputComponent";
 import SelectComponent from "../components/FormElements/SelectComponent";
 import { loginFormControls } from "../utils";
 
 export default function Login() {
-  const router = useRouter();
   return (
     <div className="relative">
       <div className="flex flex-col items-center justify-between py-0 px-10 mt-8 mr-auto xl:px-5 lg:flex-row">
@@ -31,12 +29,12 @@ export default function Login() {
                     />
                   ) : null
                 )}
-                <button className="inline-flex w-full items-center justify-center bg-black px-6 py-4 text-lg rounded-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide">
+                <button className="inline-flex w-full items-center justify-center bg-[#295339] px-6 py-4 text-lg rounded-lg text-white hover:text-[#adc3b6] transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide">
                   Login
                 </button>
                 <div className="flex flex-col gap-2">
                   <p>
-                    New to GreenKart? <a href="/register">Create an account here.</a>
+                    New to GreenKart? <a href="/register" className="hover:underline hover:underline-offset-2">Create an account here.</a>
                   </p>
                 </div>
               </div>
