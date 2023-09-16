@@ -29,12 +29,18 @@ export default function Login() {
                     />
                   ) : null
                 )}
-                <button className="inline-flex w-full items-center justify-center bg-[#295339] px-6 py-4 text-lg rounded-lg text-white hover:text-[#adc3b6] transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide">
+                <button className="text-white inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg rounded-lg hover:text-[#adc3b6] transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide">
                   Login
                 </button>
                 <div className="flex flex-col gap-2">
                   <p>
-                    New to GreenKart? <a href="/register" className="hover:underline hover:underline-offset-2">Create an account here.</a>
+                    New to GreenKart?{" "}
+                    <a
+                      href="/register"
+                      className="hover:underline hover:underline-offset-2"
+                    >
+                      Create an account here.
+                    </a>
                   </p>
                 </div>
               </div>

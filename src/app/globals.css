@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    color: #295339;
-    background-color: #e5ece9;
-}
-
 body::-webkit-scrollbar {
     width: 1em;
   }

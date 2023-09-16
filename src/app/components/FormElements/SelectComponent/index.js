@@ -6,7 +6,7 @@ export default function SelectComponent({
 }) {
   return (
     <div className="relative">
-      <p className="py-0 px-2 -mt-3 mr-0 mb-0 ml-2 absolute font-medium text-[#295339] bg-white">
+      <p className="py-0 px-2 -mt-3 mr-0 mb-0 ml-2 absolute font-medium text-secondary bg-white">
         {label}
       </p>
       <select
