@@ -1,7 +1,7 @@
 "use client";
-import InputComponent from "../components/FormElements/InputComponent";
-import SelectComponent from "../components/FormElements/SelectComponent";
-import { loginFormControls } from "../utils";
+import InputComponent from "../../components/FormElements/InputComponent";
+import SelectComponent from "../../components/FormElements/SelectComponent";
+import { loginFormControls } from "../../utils";
 
 export default function Login() {
   return (

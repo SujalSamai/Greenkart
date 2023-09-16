@@ -1,7 +1,7 @@
 "use client";
 
-import { GlobalContext } from "@/app/context";
-import { adminNavOptions, navOptions } from "@/app/utils";
+import { GlobalContext } from "@/context";
+import { adminNavOptions, navOptions } from "@/utils";
 import { Fragment, useContext } from "react";
 import CommonModal from "../CommonModal";
 import Image from "next/image";

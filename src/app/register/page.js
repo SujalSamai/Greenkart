@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import InputComponent from "../components/FormElements/InputComponent";
-import SelectComponent from "../components/FormElements/SelectComponent";
-import { registrationFormControls } from "../utils";
+import InputComponent from "../../components/FormElements/InputComponent";
+import SelectComponent from "../../components/FormElements/SelectComponent";
+import { registrationFormControls } from "../../utils";
 
 const isRegisterd = false;
 export default function Register() {

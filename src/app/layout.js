@@ -1,7 +1,7 @@
-import Navbar from "./components/Navbar";
-import GlobalState from "./context";
+import Navbar from "../components/Navbar";
+import GlobalState from "../context";
 import "./globals.css";
-import { outfit, bricolage } from "./utils/Fonts";
+import { outfit, bricolage } from "../utils/Fonts";
 
 export const metadata = {
   title: "GreenKart - Turn it Green.",
