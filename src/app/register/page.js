@@ -4,10 +4,12 @@ import { useRouter } from "next/navigation";
 import InputComponent from "../../components/FormElements/InputComponent";
 import SelectComponent from "../../components/FormElements/SelectComponent";
 import { registrationFormControls } from "../../utils";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { registerNewUser } from "@/services/register";
-
-const isRegisterd = false;
+import { GlobalContext } from "@/context";
+import ComponentLevelLoader from "@/components/Loader/ComponentLevel";
+import Notification from "@/components/Notification";
+import { toast } from "react-toastify";
 
 const initialFormData = {
   name: "",
@@ -18,6 +20,9 @@ const initialFormData = {
 
 export default function Register() {
   const [formData, setFormData] = useState(initialFormData); //for updating form data
+  const [isRegisterd, setIsRegistered] = useState(false);
+  const { isAuthUser, pageLoader, setPageLoader } = useContext(GlobalContext);
+
   const router = useRouter();
 
   //disabling the register button till any of the field is empty
@@ -34,9 +39,27 @@ export default function Register() {
   }
 
   async function handleRegisterOnSubmit() {
+    setPageLoader(true);
     const data = await registerNewUser(formData);
-    console.log(data);
+    if (data.success) {
+      toast.success(data.message, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setIsRegistered(true);
+      setPageLoader(false);
+      setFormData(initialFormData);
+    } else {
+      toast.error(data.message, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setPageLoader(false);
+      setFormData(initialFormData);
+    }
   }
+
+  useEffect(() => {
+    if (isAuthUser) router.push("/");
+  }, [isAuthUser]);
 
   return (
     <div className="relative">
@@ -51,7 +74,7 @@ export default function Register() {
               </p>
               {isRegisterd ? (
                 <button
-                  className="inline-flex items-center justify-center bg-secondary mt-10 px-6 py-4 text-lg rounded-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide"
+                  className="inline-flex items-center justify-center bg-secondary mt-10 px-6 py-4 text-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide w-full"
                   onClick={() => router.push("/login")}
                 >
                   Login
@@ -87,11 +110,19 @@ export default function Register() {
                     ) : null
                   )}
                   <button
-                    className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg rounded-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide disabled:opacity-80"
+                    className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide disabled:opacity-80"
                     disabled={!isFormValid()}
                     onClick={handleRegisterOnSubmit}
                   >
-                    Register
+                    {pageLoader ? (
+                      <ComponentLevelLoader
+                        text={"Registering"}
+                        color={"#ffffff"}
+                        loading={pageLoader}
+                      />
+                    ) : (
+                      "Register"
+                    )}
                   </button>
                   <div className="flex flex-col gap-2">
                     <p>
@@ -110,6 +141,7 @@ export default function Register() {
           </div>
         </div>
       </div>
+      <Notification />
     </div>
   );
 }

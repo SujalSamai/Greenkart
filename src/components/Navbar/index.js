@@ -6,14 +6,12 @@ import { Fragment, useContext } from "react";
 import CommonModal from "../CommonModal";
 import Image from "next/image";
 import { HiMenuAlt1 } from "react-icons/hi";
+import Cookies from "js-cookie";
+import { usePathname, useRouter } from "next/navigation";
 
 const isAdminView = false;
-const isAuthUser = false;
-const user = {
-  role: "admin",
-};
 
-function NavItems({ isModalView = false }) {
+function NavItems({ isModalView = false, router }) {
   return (
     <div
       className={`items-center justify-between w-full md:flex md:w-auto ${
@@ -50,6 +48,22 @@ function NavItems({ isModalView = false }) {
 
 export default function Navbar() {
   const { showNavModal, setShowNavModal } = useContext(GlobalContext);
+  const { user, setUser, isAuthUser, setIsAuthUser } =
+    useContext(GlobalContext);
+
+  const router = useRouter();
+
+  function handleLogout() {
+    setIsAuthUser(false);
+    setUser(null);
+    Cookies.remove("token");
+    localStorage.clear();
+    router.push("/");
+  }
+
+  function handleLogin() {
+    router.push("/login");
+  }
 
   return (
     <>
@@ -98,6 +112,7 @@ export default function Navbar() {
             ) : null}
             {isAuthUser ? (
               <button
+                onClick={handleLogout}
                 className={
                   "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-lg hover:text-[#adc3b6]"
                 }
@@ -106,6 +121,7 @@ export default function Navbar() {
               </button>
             ) : (
               <button
+                onClick={handleLogin}
                 className={
                   "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-lg hover:text-[#adc3b6]"
                 }
@@ -127,12 +143,18 @@ export default function Navbar() {
               <HiMenuAlt1 className="text-3xl" />
             </button>
           </div>
-          <NavItems />
+          <NavItems router={router} isAdminView={isAdminView} />
         </div>
       </nav>
       <CommonModal
         showModalTitle={false}
-        mainContent={<NavItems isModalView={true} isAdminView={isAdminView} />}
+        mainContent={
+          <NavItems
+            isModalView={true}
+            isAdminView={isAdminView}
+            router={router}
+          />
+        }
         show={showNavModal}
         setShow={setShowNavModal}
       />

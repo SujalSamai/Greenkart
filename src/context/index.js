@@ -1,13 +1,48 @@
 "use client";
 
-import { createContext,useState } from "react";
+import Cookies from "js-cookie";
+import { createContext, useEffect, useState } from "react";
 
 export const GlobalContext = createContext(null);
 
 export default function GlobalState({ children }) {
   const [showNavModal, setShowNavModal] = useState(false);
+  const [pageLoader, setPageLoader] = useState(false);
+  const [componentLoader, setComponentLoader] = useState({
+    loading: false,
+    id: "",
+  });
+  const [isAuthUser, setIsAuthUser] = useState(null);
+  const [user, setUser] = useState(null);
+
+  //when we refresh the page, if the user's token is present in cookie, that means they are authenticated
+  useEffect(() => {
+    if (Cookies.get("token") !== undefined) {
+      setIsAuthUser(true);
+      //we will fetch user data from localStorage, if user don't have any data as of now we will fetch an empty object
+      const userData = JSON.parse(localStorage.getItem("user")) || {};
+      setUser(userData);
+    } else {
+      setIsAuthUser(false);
+      setUser({});
+    }
+  }, [Cookies]);
+
   return (
-    <GlobalContext.Provider value={{ showNavModal, setShowNavModal }}>
+    <GlobalContext.Provider
+      value={{
+        showNavModal,
+        setShowNavModal,
+        pageLoader,
+        setPageLoader,
+        isAuthUser,
+        setIsAuthUser,
+        user,
+        setUser,
+        componentLoader,
+        setComponentLoader,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );

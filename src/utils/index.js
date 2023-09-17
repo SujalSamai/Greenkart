@@ -39,7 +39,6 @@ export const adminNavOptions = [
   },
 ];
 
-
 export const registrationFormControls = [
   {
     id: "name",
