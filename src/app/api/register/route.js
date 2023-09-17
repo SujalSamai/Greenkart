@@ -1,5 +1,6 @@
 import connectToDB from "@/database";
 import User from "@/models/user";
+import { hash } from "bcryptjs";
 import Joi from "joi";
 import { NextResponse } from "next/server";
 
@@ -25,26 +26,27 @@ export async function POST(req) {
   if (error) {
     return NextResponse.json({
       success: false,
-      message: email.details[0],
+      message: error.details[0].message,
     });
   }
 
   try {
     //check if the user exists already or not through email
     const isUserAlreadyExists = await User.findOne({ email });
+
     if (isUserAlreadyExists) {
       return NextResponse.json({
         success: false,
-        message: "User already exists, please try with a different account!",
+        message: "User already exists. Please try with different email.",
       });
     } else {
       //if this is a new user, then we will hash their password using bcrypt
-      const hashPasssword = await hash(password, 12);
+      const hashPassword = await hash(password, 12);
       //create the new user
       const newlyCreatedUser = await User.create({
         name,
         email,
-        password: hashPasssword,
+        password: hashPassword,
         role,
       });
 
@@ -59,7 +61,7 @@ export async function POST(req) {
     console.log("Error in registering the user..");
     return NextResponse.json({
       success: false,
-      message: "Something went wrong, please try again!",
+      message: "Something went wrong, please try again!" + err.message,
     });
   }
 }
