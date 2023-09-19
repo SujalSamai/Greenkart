@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
       <body className={`${outfit.variable} ${bricolage.variable} bg-primary`}>
         <GlobalState>
           <Navbar />
-          <main className="flex flex-col min-h-screen mt-24">{children}</main>
+          <main className="flex flex-col min-h-screen mt-[80px]">{children}</main>
         </GlobalState>
       </body>
     </html>

@@ -2,16 +2,14 @@
 
 import { GlobalContext } from "@/context";
 import { adminNavOptions, navOptions } from "@/utils";
-import { Fragment, useContext } from "react";
-import CommonModal from "../CommonModal";
-import Image from "next/image";
-import { HiMenuAlt1 } from "react-icons/hi";
 import Cookies from "js-cookie";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
+import { Fragment, useContext } from "react";
+import { HiMenuAlt1 } from "react-icons/hi";
+import CommonModal from "../CommonModal";
 
-const isAdminView = false;
-
-function NavItems({ isModalView = false, router }) {
+function NavItems({ isModalView = false, router, isAdminView }) {
   return (
     <div
       className={`items-center justify-between w-full md:flex md:w-auto ${
@@ -29,6 +27,7 @@ function NavItems({ isModalView = false, router }) {
               <li
                 className="cursor-pointer block py-2 pl-3 pr-4  rounded md:p-0 hover:text-[#adc3b6]"
                 key={item.id}
+                onClick={() => router.push(item.path)}
               >
                 {item.label}
               </li>
@@ -37,6 +36,7 @@ function NavItems({ isModalView = false, router }) {
               <li
                 className="cursor-pointer block py-2 pl-3 pr-4 rounded md:p-0 hover:text-[#adc3b6]"
                 key={item.id}
+                onClick={() => router.push(item.path)}
               >
                 {item.label}
               </li>
@@ -51,7 +51,10 @@ export default function Navbar() {
   const { user, setUser, isAuthUser, setIsAuthUser } =
     useContext(GlobalContext);
 
+  const pathName = usePathname();
   const router = useRouter();
+
+  console.log(pathName);
 
   function handleLogout() {
     setIsAuthUser(false);
@@ -61,6 +64,8 @@ export default function Navbar() {
     router.push("/");
   }
 
+  const isAdminView = pathName.includes("admin-view");
+
   function handleLogin() {
     router.push("/login");
   }
@@ -69,7 +74,10 @@ export default function Navbar() {
     <>
       <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-center md:justify-between mx-auto">
-          <div className="flex items-center cursor-pointer">
+          <div
+            onClick={() => router.push("/")}
+            className="flex items-center cursor-pointer"
+          >
             <Image src="/logo.png" width={100} height={100} />
           </div>
           <div className="flex md:order-2 gap-2 mt-5 md:mt-0">
@@ -97,11 +105,13 @@ export default function Navbar() {
                   className={
                     "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-lg hover:text-[#adc3b6]"
                   }
+                  onClick={() => router.push("/")}
                 >
                   Client View
                 </button>
               ) : (
                 <button
+                  onClick={() => router.push("/admin-view")}
                   className={
                     "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-lg hover:text-[#adc3b6]"
                   }

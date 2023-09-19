@@ -1,15 +1,15 @@
 "use client";
 
+import ComponentLevelLoader from "@/components/Loader/ComponentLevel";
+import Notification from "@/components/Notification";
+import { GlobalContext } from "@/context";
+import { login } from "@/services/login";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import InputComponent from "../../components/FormElements/InputComponent";
 import { loginFormControls } from "../../utils";
-import { useRouter } from "next/navigation";
-import { login } from "@/services/login";
-import { GlobalContext } from "@/context";
-import Cookies from "js-cookie";
-import ComponentLevelLoader from "@/components/Loader/ComponentLevel";
-import { toast } from "react-toastify";
-import Notification from "@/components/Notification";
 
 const initialFormData = {
   email: "",
