@@ -188,18 +188,17 @@ export const AvailableSizes = [
   },
 ];
 
-// export const firebaseConfig = {
-//   apiKey: "API_KEY",
-//   authDomain: "AUTH_DOMAIN",
-//   projectId: "PROJECT_ID",
-//   storageBucket: "STROAGE_BUCKET",
-//   messagingSenderId: "MESSAGING_SENDER_ID",
-//   appId: "APP_ID",
-//   measurementId: "MEASUREMENT_ID",
-// };
+export const firebaseConfig = {
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: "greenkart-3e1e1.appspot.com",
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID,
+};
 
-// export const firebaseStroageURL =
-//   "YOUR_FIREBASE_STROAGE_URL";
+export const firebaseStroageURL = process.env.FIREBASE_STORAGE_URL;
 
 // export const addNewAddressFormControls = [
 //   {

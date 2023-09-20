@@ -54,8 +54,6 @@ export default function Navbar() {
   const pathName = usePathname();
   const router = useRouter();
 
-  console.log(pathName);
-
   function handleLogout() {
     setIsAuthUser(false);
     setUser(null);
@@ -73,14 +71,14 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-center md:justify-between mx-auto">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
           <div
             onClick={() => router.push("/")}
             className="flex items-center cursor-pointer"
           >
-            <Image src="/logo.png" width={100} height={100} />
+            <Image src="/logo.png" width={100} height={100} priority />
           </div>
-          <div className="flex md:order-2 gap-2 mt-5 md:mt-0">
+          <div className="flex md:order-2 gap-2">
             {!isAdminView && isAuthUser ? (
               <Fragment>
                 <button
