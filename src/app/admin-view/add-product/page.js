@@ -63,7 +63,7 @@ const initialFormData = {
   name: "",
   price: 0,
   description: "",
-  category: "men",
+  category: "all",
   sizes: [],
   deliveryInfo: "",
   onSale: "no",
@@ -132,7 +132,7 @@ export default function AdminAddNewProduct() {
   return (
     <div className="w-full mt-5 mr-0 mb-0 ml-0 relative">
       <div className="flex flex-col items-start justify-start p-10 bg-white shadow-2xl rounded-xl relative">
-        <div className="w-full mt-6 mr-0 mb-0 ml-0 space-y-8">
+        <div className="w-full mt-6 mr-0 mb-0 ml-0 space-y-8 text-secondary">
           <input
             accept="image/*"
             alt="product-image"
@@ -141,8 +141,8 @@ export default function AdminAddNewProduct() {
             onChange={handleImage}
           />
 
-          <div className="flex gap-2 flex-col">
-            <label>AvailableSizes</label>
+          <div className="flex gap-2 flex-col text-secondary">
+            <label>Available Sizes</label>
             <TileComponent
               data={AvailableSizes}
               onClick={handleTileClick}
@@ -178,7 +178,7 @@ export default function AdminAddNewProduct() {
             ) : null
           )}
           <button
-            className="inline-flex w-full items-center justify-center bg-black px-6 py-4 text-lg text-white font-medium uppercase tracking-wide"
+            className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide"
             onClick={handleAddProduct}
           >
             {componentLoader && componentLoader.loading ? (

@@ -138,12 +138,16 @@ export const adminAddProductformControls = [
         id: "kids",
         label: "Kids",
       },
+      {
+        id: "all",
+        label: "All",
+      },
     ],
   },
   {
     id: "deliveryInfo",
     type: "text",
-    placeholder: "Enter deliveryInfo",
+    placeholder: "Enter Delivery info (Shipping)",
     label: "Delivery Info",
     componentType: "input",
   },
@@ -175,6 +179,10 @@ export const adminAddProductformControls = [
 
 export const AvailableSizes = [
   {
+    id: "xs",
+    label: "XS",
+  },
+  {
     id: "s",
     label: "S",
   },
@@ -185,6 +193,14 @@ export const AvailableSizes = [
   {
     id: "l",
     label: "L",
+  },
+  {
+    id: "x",
+    label: "XL",
+  },
+  {
+    id: "2xl",
+    label: "2XL",
   },
 ];
 
