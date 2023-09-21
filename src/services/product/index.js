@@ -17,3 +17,18 @@ export const addNewProduct = async (formData) => {
     console.log(error);
   }
 };
+
+export const getAllAdminProducts = async () => {
+  try {
+    // in order to fetch data from server, we have to provide base url to the fetch method like this http://localhost:3000/api/admin/all-products
+
+    const res = await fetch("http://localhost:3000/api/admin/all-products", {
+      method: "GET",
+      cache: "no-store",
+    });
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
