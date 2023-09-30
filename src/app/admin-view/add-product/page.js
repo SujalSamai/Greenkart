@@ -74,6 +74,17 @@ const initialFormData = {
 export default function AdminAddNewProduct() {
   const [formData, setFormData] = useState(initialFormData);
 
+  // need to check
+  const {
+    // ComponentLevelLoader,
+    // setComponentLevelLoader,
+    currentUpdatedProduct,
+    setCurrentUpdatedProduct,
+  } = useContext(GlobalContext);
+
+  console.log(currentUpdatedProduct);
+
+
   async function handleImage(event) {
     const extractImageUrl = await helperForUploadingImageToFirebase(
       event.target.files[0]
