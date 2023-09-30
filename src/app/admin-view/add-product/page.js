@@ -6,7 +6,7 @@ import TileComponent from "@/components/FormElements/TileComponent";
 import ComponentLevelLoader from "@/components/Loader/ComponentLevel";
 import Notification from "@/components/Notification";
 import { GlobalContext } from "@/context";
-import { addNewProduct } from "@/services/product";
+import { addNewProduct, updateAProduct } from "@/services/product";
 import {
   AvailableSizes,
   adminAddProductformControls,
@@ -21,7 +21,7 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { useRouter } from "next/navigation";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 //initializing the firebase
@@ -102,13 +102,28 @@ export default function AdminAddNewProduct() {
     });
   }
 
-  const { componentLoader, setComponentLoader } = useContext(GlobalContext);
+  const {
+    componentLoader,
+    setComponentLoader,
+    currentUpdatedProduct,
+    setCurrentUpdatedProduct,
+  } = useContext(GlobalContext);
 
+  console.log(currentUpdatedProduct);
   const router = useRouter();
+
+  useEffect(() => {
+    if (currentUpdatedProduct !== null) {
+      setFormData(currentUpdatedProduct);
+    }
+  }, [currentUpdatedProduct]);
 
   async function handleAddProduct() {
     setComponentLoader({ loading: true, id: "" });
-    const res = await addNewProduct(formData);
+    const res =
+      currentUpdatedProduct !== null
+        ? await updateAProduct(formData)
+        : await addNewProduct(formData);
     console.log(res);
     if (res.success) {
       setComponentLoader({ loading: false, id: "" });
@@ -117,6 +132,7 @@ export default function AdminAddNewProduct() {
       });
 
       setFormData(initialFormData);
+      setCurrentUpdatedProduct(null);
       setTimeout(() => {
         router.push("/admin-view/all-products");
       });
@@ -183,12 +199,18 @@ export default function AdminAddNewProduct() {
           >
             {componentLoader && componentLoader.loading ? (
               <ComponentLevelLoader
-                text={"Adding Product"}
+                text={
+                  currentUpdatedProduct !== null
+                    ? "Updating Info"
+                    : "Adding Product"
+                }
                 color={"#ffffff"}
                 loading={componentLoader && componentLoader.loading}
               />
+            ) : currentUpdatedProduct !== null ? (
+              "Update Info"
             ) : (
-              " Add Product"
+              "Add Product"
             )}
           </button>
         </div>

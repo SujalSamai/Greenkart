@@ -2,8 +2,14 @@
 
 import ProductTile from "./ProductTile";
 import ProductButtons from "./ProductButtons";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function CommonListing({ data }) {
+  const router = useRouter();
+  useEffect(() => {
+    router.refresh();
+  }, []);
   return (
     <section className="py-12 sm:py-16">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
