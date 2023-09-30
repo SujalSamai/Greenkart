@@ -73,7 +73,6 @@ const initialFormData = {
 
 export default function AdminAddNewProduct() {
   const [formData, setFormData] = useState(initialFormData);
-
   async function handleImage(event) {
     const extractImageUrl = await helperForUploadingImageToFirebase(
       event.target.files[0]

@@ -15,6 +15,7 @@ export default function GlobalState({ children }) {
   const [isAuthUser, setIsAuthUser] = useState(null);
   const [user, setUser] = useState(null);
   const [currentUpdatedProduct, setCurrentUpdatedProduct] = useState(null);
+
   //when we refresh the page, if the user's token is present in cookie, that means they are authenticated
   useEffect(() => {
     if (Cookies.get("token") !== undefined) {
