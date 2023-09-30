@@ -4,6 +4,7 @@ import ProductTile from "./ProductTile";
 import ProductButtons from "./ProductButtons";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import Notification from "../Notification";
 
 export default function CommonListing({ data }) {
   const router = useRouter();
@@ -27,6 +28,7 @@ export default function CommonListing({ data }) {
             : null}
         </div>
       </div>
+      <Notification />
     </section>
   );
 }

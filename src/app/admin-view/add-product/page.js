@@ -134,7 +134,7 @@ export default function AdminAddNewProduct() {
       setCurrentUpdatedProduct(null);
       setTimeout(() => {
         router.push("/admin-view/all-products");
-      });
+      }, 1000);
     } else {
       setComponentLoader({ loading: false, id: "" });
       toast.error(res.message, {

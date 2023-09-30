@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
-export async function PUT(req) {
+export async function DELETE(req) {
   try {
     await connectToDB();
     //fetch the url and get the id of the post we want to delete
