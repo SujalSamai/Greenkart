@@ -1,8 +1,15 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 export default function ProductTile({ item }) {
+  const router = useRouter();
   return (
-    <div>
+    <div
+      onClick={() => {
+        router.push(`/product/${item._id}`);
+      }}
+    >
       <div className="overflow-hidden aspect-w-1 aspect-h-1 h-64 p-2">
         <img
           src={item.imageUrl}
@@ -19,7 +26,20 @@ export default function ProductTile({ item }) {
       ) : null}
       <div className="my-2 mx-auto flex w-11/12 flex-col items-start justify-between">
         <div className="mb-2 flex">
-          <p className="text-sm font-semibold">{`₹ ${item.price}`}</p>
+          <p
+            className={`mr-3 text-sm font-semibold ${
+              item.onSale === "yes" ? "line-through" : ""
+            }`}
+          >{`₹ ${item.price}`}</p>
+          {item.onSale === "yes" ? (
+            <p className="mr-2 text-sm font-semibold text-red-700">{`₹ ${(
+              item.price -
+              item.price * (item.priceDrop / 100)
+            ).toFixed(2)}`}</p>
+          ) : null}
+          {item.onSale === "yes" ? (
+            <p className="text-sm font-semibold">{`(-${item.priceDrop})% off`}</p>
+          ) : null}
         </div>
         <h3 className="mb-2 text-secondary text-xs">{item.name}</h3>
       </div>

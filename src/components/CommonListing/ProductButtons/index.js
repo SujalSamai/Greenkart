@@ -61,7 +61,7 @@ export default function ProductButtons({ item }) {
     </>
   ) : (
     <>
-      <button className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md">
+      <button className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:text-[#adc3b6]">
         Add to Cart
       </button>
     </>
