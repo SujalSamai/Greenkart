@@ -68,7 +68,7 @@ export async function POST(req) {
     } else {
       return NextResponse.json({
         success: false,
-        message: "You are not authorized.",
+        message: "You are not authorized, so you can't add the product.",
       });
     }
   } catch (error) {

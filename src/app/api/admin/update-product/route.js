@@ -56,7 +56,7 @@ export async function PUT(req) {
     } else {
       return NextResponse.json({
         success: false,
-        message: "You are not authenticated!",
+        message: "You are not authorized, so you can't update the product.",
       });
     }
   } catch (e) {

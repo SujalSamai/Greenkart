@@ -37,7 +37,7 @@ export async function DELETE(req) {
     } else {
       return NextResponse.json({
         success: false,
-        message: "You are not authorized!",
+        message: "You are not authorized, so you can't delete the product.",
       });
     }
   } catch (e) {
