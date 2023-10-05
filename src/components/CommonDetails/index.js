@@ -82,13 +82,13 @@ export default function CommonDetails({ item }) {
                 <nav className="flex gap-4">
                   <a
                     href="#"
-                    className="borde-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900"
+                    className="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900"
                   >
                     Description
                   </a>
                 </nav>
               </div>
-              <div className="mt-8 flow-root sm:mt-12">
+              <div className="mt-8 flow-root sm:mt-12 mb-8">
                 {item && item.description}
               </div>
             </div>

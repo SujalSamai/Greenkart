@@ -1,4 +1,5 @@
 import connectToDB from "@/database";
+import AuthUser from "@/middleware/AuthUser";
 import Product from "@/models/product";
 import { NextResponse } from "next/server";
 
@@ -7,26 +8,12 @@ export const dynamic = "force-dynamic";
 export async function PUT(req) {
   try {
     await connectToDB();
-    const extractData = await req.json();
-
-    //extract the post data
-    const {
-      _id,
-      name,
-      price,
-      description,
-      category,
-      sizes,
-      deliveryInfo,
-      onSale,
-      priceDrop,
-      imageUrl,
-    } = extractData;
-
-    //update the product data
-    const updatedProduct = await Product.findOneAndUpdate(
-      { _id: _id },
-      {
+    const isAuthUser = await AuthUser(req);
+    if (isAuthUser?.role === "admin") {
+      const extractData = await req.json();
+      //extract the post data
+      const {
+        _id,
         name,
         price,
         description,
@@ -36,19 +23,40 @@ export async function PUT(req) {
         onSale,
         priceDrop,
         imageUrl,
-      },
-      { new: true }
-    );
+      } = extractData;
 
-    if (updatedProduct) {
-      return NextResponse.json({
-        success: true,
-        message: "Product update successfully!",
-      });
+      //update the product data
+      const updatedProduct = await Product.findOneAndUpdate(
+        { _id: _id },
+        {
+          name,
+          price,
+          description,
+          category,
+          sizes,
+          deliveryInfo,
+          onSale,
+          priceDrop,
+          imageUrl,
+        },
+        { new: true }
+      );
+
+      if (updatedProduct) {
+        return NextResponse.json({
+          success: true,
+          message: "Product update successfully!",
+        });
+      } else {
+        return NextResponse.json({
+          success: false,
+          message: "Couldn't update the product, please try again later!",
+        });
+      }
     } else {
       return NextResponse.json({
         success: false,
-        message: "Couldn't update the product, please try again later!",
+        message: "You are not authenticated!",
       });
     }
   } catch (e) {
