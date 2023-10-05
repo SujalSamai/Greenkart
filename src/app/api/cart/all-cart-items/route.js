@@ -17,21 +17,22 @@ export async function GET(req) {
           message: "Please login to view the cart items.",
         });
       }
-      const extractAllCartItems = await Cart.find({ userID: id })
-        .populate("userID")
-        .populate("productID");
-      if(extractAllCartItems) {
+      //getting the data of cart based on userID and then populating the product information based on productID (productID refers to the productInfo)
+      const extractAllCartItems = await Cart.find({ userID: id }).populate(
+        "productID"
+      );
+      if (extractAllCartItems) {
         return NextResponse.json({
-            success: true,
-            data: extractAllCartItems,
-            message: "Cart items fetched successfully!"
-        })
+          success: true,
+          data: extractAllCartItems,
+          message: "Cart items fetched successfully!",
+        });
       } else {
         return NextResponse.json({
-            success:false,
-            message: "Cart items not found!",
-            status: 204
-        })
+          success: false,
+          message: "Cart items not found!",
+          status: 204,
+        });
       }
     } else {
       return NextResponse.json({

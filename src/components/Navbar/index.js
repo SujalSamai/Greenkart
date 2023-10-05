@@ -8,6 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { Fragment, useContext, useEffect } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
 import CommonModal from "../CommonModal";
+import CartModal from "../CartModal";
 
 function NavItems({ isModalView = false, router, isAdminView }) {
   return (
@@ -55,6 +56,7 @@ export default function Navbar() {
     setIsAuthUser,
     currentUpdatedProduct,
     setCurrentUpdatedProduct,
+    showCartModal,
   } = useContext(GlobalContext);
 
   const pathName = usePathname();
@@ -181,6 +183,7 @@ export default function Navbar() {
         show={showNavModal}
         setShow={setShowNavModal}
       />
+      {showCartModal && <CartModal />}
     </>
   );
 }

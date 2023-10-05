@@ -15,6 +15,8 @@ export default function GlobalState({ children }) {
   const [isAuthUser, setIsAuthUser] = useState(null);
   const [user, setUser] = useState(null);
   const [currentUpdatedProduct, setCurrentUpdatedProduct] = useState(null);
+  const [showCartModal, setShowCartModal] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
   //when we refresh the page, if the user's token is present in cookie, that means they are authenticated
   useEffect(() => {
@@ -44,6 +46,10 @@ export default function GlobalState({ children }) {
         setComponentLoader,
         currentUpdatedProduct,
         setCurrentUpdatedProduct,
+        showCartModal,
+        setShowCartModal,
+        cartItems,
+        setCartItems,
       }}
     >
       {children}
