@@ -49,7 +49,7 @@ export async function POST(req) {
     } else {
       return NextResponse.json({
         success: false,
-        message: "Login first, to add product to cart.",
+        message: "Please login first to add product to cart.",
       });
     }
   } catch (error) {
