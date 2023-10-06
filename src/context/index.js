@@ -7,7 +7,7 @@ export const GlobalContext = createContext(null);
 
 export default function GlobalState({ children }) {
   const [showNavModal, setShowNavModal] = useState(false);
-  const [pageLoader, setPageLoader] = useState(false);
+  const [pageLoader, setPageLoader] = useState(true);
   const [componentLoader, setComponentLoader] = useState({
     loading: false,
     id: "",

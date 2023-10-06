@@ -77,7 +77,7 @@ export default function ProductButtons({ item }) {
       >
         {componentLoader &&
         componentLoader.loading &&
-        item._id === componentLoader.id ? (
+        componentLoader._id === item.id ? (
           <ComponentLevelLoader
             text={"Deleting Product"}
             color={"#ffffff"}
