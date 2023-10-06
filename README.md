@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GreenKart - An Eco-mmerce app 🌱
+- _Welcome to GREENKART_ – your one-stop destination for sustainable and environmentally conscious shopping! In a world where our choices have a profound impact on the planet, we believe that e-commerce can be a force for good. Our mission is to provide you with a unique online shopping experience that not only caters to your needs but also champions the well-being of our planet.
+- GreenKart is a B2C marketplace or an e-commerce platform to buy organic & eco-friendly products which are alternative to plastics.
+- We have all the products from popular & rising Indian Startups who are working for the betterment of environment through their products.
 
-## Getting Started
+## Why GreenKart? 🤔
+**Let's get into some facts & figures:** 💯
+- We go through 10 billion plastic bags worldwide every week.
+- Plastics don’t break down, they break up, becoming a permanent pollutant in our environment.
+- Microplastics have been reported in food for human consumption. the average person could be eating up to 5 grams of plastic a week.
+- 8 million tonnes of plastic pollution enters our oceans each year. It’s estimated that by 2050, there will be more plastic in our oceans than fish.
 
-First, run the development server:
+**So what's the solution? Recycling??** ♻️
+- Only 9% of our plastic has been recycled, and only 10% of that has been recycled more than once.
+- Recycled plastics are mostly downcycled, meaning that they’re recycled into products of lesser quality which are less likely to be further recycled
+- Recycling is important, but will never be the solution to our rapidly expanding plastic consumption
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Doesn't seem like a very good option, does it?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Our Goal 🎯
+Green marketing is a growing trend in the business world, but its adoption is hindered by a number of challenges, including a lack of standardization, consumer awareness, trust, and online product information. This lack of standardization makes it difficult for consumers to assess the environmental claims of different products, and it also makes it difficult for businesses to compete fairly. 
+Our goal is to make it easy and convenient for people to buy and sell eco-friendly products through our e-commerce platform. We want to make it a one-stop shop for consumers to find the products they need to live a more sustainable lifestyle, and we want to make it easy for businesses to reach these consumers.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Our Solution 🧑‍💻
+To achieve our goals, we are committed to the following:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Leverage our in-depth research & findings in the sustainable domain, harnessing emerging technologies to create an effective platform.
+- Providing a wide selection of eco-friendly products with industry standards & detailed info to build user trust.
+- Making it easy to find the right products through an user friendly design
+- Offering competitive prices and convenient shipping options
+- Educating consumers about the benefits of eco-friendly products
+- Supporting sustainable & rising startups to sell their products.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Tech Stack 🧩
+| Frontend    | Backend | Payment Gateway  |
+| -------- | ------- | -----------------|
+| Next.js  | Next.js    | Stripe
+| Tailwind CSS | Firebase     |
+| React Toastify    | MongoDB    |
+| Headless UI    | JSON Web Tokens
