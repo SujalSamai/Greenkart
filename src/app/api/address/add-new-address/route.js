@@ -1,5 +1,6 @@
 import connectToDB from "@/database";
 import AuthUser from "@/middleware/AuthUser";
+import Address from "@/models/address";
 import Joi from "joi";
 import { NextResponse } from "next/server";
 
@@ -9,10 +10,10 @@ const AddNewAddress = Joi.object({
   city: Joi.string().required(),
   country: Joi.string().required(),
   postalCode: Joi.string().required(),
-  userId: Joi.string().required(),
+  userID: Joi.string().required(),
 });
 
-export const dynamic = "force dynamic";
+export const dynamic = "force-dynamic";
 
 export async function POST(req) {
   try {
@@ -23,14 +24,14 @@ export async function POST(req) {
     if (isAuthUser) {
       const data = await req.json();
 
-      const { fullName, address, city, country, postalCode, userId } = data;
+      const { fullName, address, city, country, postalCode, userID } = data;
       const { error } = AddNewAddress.validate({
         fullName,
         address,
         city,
         country,
         postalCode,
-        userId,
+        userID,
       });
 
       if (error) {
@@ -40,7 +41,7 @@ export async function POST(req) {
         });
       }
 
-      const newlyAddedAddress = await address.create(data);
+      const newlyAddedAddress = await Address.create(data);
 
       if (newlyAddedAddress) {
         return NextResponse.json({
@@ -56,7 +57,7 @@ export async function POST(req) {
     } else {
       return NextResponse.json({
         success: false,
-        message: "You are not autenticated",
+        message: "You are not authenticated",
       });
     }
   } catch (e) {

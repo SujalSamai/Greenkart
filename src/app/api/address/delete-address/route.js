@@ -3,7 +3,7 @@ import AuthUser from "@/middleware/AuthUser";
 import Address from "@/models/address";
 import { NextResponse } from "next/server";
 
-export const dynamic = "force dynamic";
+export const dynamic = "force-dynamic";
 
 export async function DELETE(req) {
   try {
@@ -31,13 +31,13 @@ export async function DELETE(req) {
       } else {
         return NextResponse.json({
           success: false,
-          message: "failed to delete addresses ! Please try again",
+          message: "failed to delete address ! Please try again",
         });
       }
     } else {
       return NextResponse.json({
         success: false,
-        message: "You are not autenticated",
+        message: "You are not authenticated",
       });
     }
   } catch (e) {

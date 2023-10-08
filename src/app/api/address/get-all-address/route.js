@@ -3,14 +3,14 @@ import { NextResponse } from "next/server";
 import AuthUser from "@/middleware/AuthUser";
 import Address from "@/models/address";
 
-export const dynamic = "force dynamic";
+export const dynamic = "force-dynamic";
 
 export async function GET(req) {
   try {
     await connectToDB();
 
-    const { serachParams } = new URL(req.url);
-    const id = serachParams.get("id");
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get("id");
 
     if (!id) {
       return NextResponse.json({
@@ -22,7 +22,7 @@ export async function GET(req) {
     const isAuthUser = await AuthUser(req);
 
     if (isAuthUser) {
-      const getAllAddresses = await Address.find({ userId: id });
+      const getAllAddresses = await Address.find({ userID: id });
 
       if (getAllAddresses) {
         return NextResponse.json({
@@ -38,7 +38,7 @@ export async function GET(req) {
     } else {
       return NextResponse.json({
         success: false,
-        message: "You are not autenticated",
+        message: "You are not authenticated",
       });
     }
   } catch (e) {

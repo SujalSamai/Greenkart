@@ -5,7 +5,7 @@ export const addNewAddress = async (formData) => {
     const res = await fetch("/api/address/add-new-address", {
       method: "POST",
       headers: {
-        "Content-Type ": "application/json",
+        "Content-Type": "application/json",
         Authorization: `Bearer ${Cookies.get("token")}`,
       },
       body: JSON.stringify(formData),
@@ -16,7 +16,7 @@ export const addNewAddress = async (formData) => {
     console.log(e);
   }
 };
-export const fetchAllAddress = async (id) => {
+export const fetchAllAddresses = async (id) => {
   try {
     const res = await fetch(`/api/address/get-all-address?id=${id}`, {
       method: "GET",
@@ -35,7 +35,7 @@ export const updateAddress = async (formData) => {
     const res = await fetch("/api/address/update-address", {
       method: "PUT",
       headers: {
-        "Content-Type ": "application/json",
+        "Content-Type": "application/json",
         Authorization: `Bearer ${Cookies.get("token")}`,
       },
       body: JSON.stringify(formData),
