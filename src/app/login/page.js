@@ -97,7 +97,7 @@ export default function Login() {
                   ) : null
                 )}
                 <button
-                  className="text-white inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg hover:text-[#adc3b6] transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide disabled:opacity-80"
+                  className="rounded-lg text-white inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg hover:text-[#adc3b6] transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide disabled:opacity-80"
                   disabled={!isFormValid()}
                   onClick={handleLogin}
                 >
@@ -115,7 +115,7 @@ export default function Login() {
                   <p>New to GreenKart? </p>
                   <button
                     onClick={() => router.push("/register")}
-                    className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg 
+                    className="rounded-lg inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg 
                      text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide
                      "
                   >

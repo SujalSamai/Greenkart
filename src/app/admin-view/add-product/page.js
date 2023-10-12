@@ -193,7 +193,7 @@ export default function AdminAddNewProduct() {
             ) : null
           )}
           <button
-            className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide"
+            className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide rounded-lg"
             onClick={handleAddProduct}
           >
             {componentLoader && componentLoader.loading ? (

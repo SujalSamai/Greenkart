@@ -52,7 +52,7 @@ export default function CommonDetails({ item }) {
                 <div className="flex flex-row items-start lg:flex-col">
                   <button
                     type="button"
-                    className="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg bordeer-2 border-gray-100 text-center"
+                    className="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-gray-100 text-center"
                   >
                     <img
                       src={item.imageUrl}
@@ -62,7 +62,7 @@ export default function CommonDetails({ item }) {
                   </button>
                   <button
                     type="button"
-                    className="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg bordeer-2 border-gray-100 text-center"
+                    className="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-gray-100 text-center"
                   >
                     <img
                       src={item.imageUrl}
@@ -95,7 +95,7 @@ export default function CommonDetails({ item }) {
                 ) : null}
               </div>
               <button
-                className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium tracking-wide uppercase text-white"
+                className="rounded-lg mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium tracking-wide uppercase text-white"
                 type="button"
                 onClick={() => handleAddToCart(item)}
               >

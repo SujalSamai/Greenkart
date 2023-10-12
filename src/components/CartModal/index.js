@@ -65,7 +65,7 @@ export default function CartModal() {
           <ul role="list" className="">
             {cartItems.map((cartItem) => (
               <li key={cartItem.id} className="flex py-6">
-                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg border border-gray-200">
                   <img
                     src={
                       cartItem &&
@@ -97,7 +97,7 @@ export default function CartModal() {
                   <div className="flex flex-1 items-end justify-between text-sm">
                     <button
                       type="button"
-                      className="font-medium text-yellow-600 sm:order-2"
+                      className="font-medium text-yellow-600 sm:order-2 rounded-lg"
                       onClick={() => handleDeleteCartItem(cartItem._id)}
                     >
                       {componentLoader &&
@@ -127,18 +127,22 @@ export default function CartModal() {
               router.push("/cart");
               setShowCartModal(false);
             }}
-            className="mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide"
+            className="rounded-lg mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide"
           >
             Go To Cart
           </button>
           <button
             disabled={cartItems && cartItems.length === 0}
+            onClick={() => {
+              router.push("/checkout");
+              setShowCartModal(false);
+            }}
             type="button"
-            className="mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide disabled:opacity-50"
+            className="mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide disabled:opacity-50 disabled:cursor-not-allowed rounded-lg"
           >
             Checkout
           </button>
-          <div className="mt-6 flex justify-center text-center text-sm text-gray-600">
+          <div className="mt-6 flex justify-center text-center text-sm text-gray-600 rounded-lg">
             <button type="button" className="font-medium text-grey">
               Continue Shopping
               <span aria-hidden="true"> &rarr;</span>

@@ -63,7 +63,7 @@ export default function ProductButtons({ item }) {
   return isAdminView ? (
     <>
       <button
-        className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md"
+        className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-lg"
         onClick={() => {
           setCurrentUpdatedProduct(item);
           router.push("/admin-view/add-product");
@@ -73,7 +73,7 @@ export default function ProductButtons({ item }) {
       </button>
       <button
         onClick={() => handleDeleteProduct(item)}
-        className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md"
+        className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-lg"
       >
         {componentLoader &&
         componentLoader.loading &&
@@ -92,7 +92,7 @@ export default function ProductButtons({ item }) {
     <>
       <button
         onClick={() => handleAddToCart(item)}
-        className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:text-[#adc3b6]"
+        className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-lg hover:text-[#adc3b6]"
       >
         {componentLoader &&
         componentLoader.loading &&

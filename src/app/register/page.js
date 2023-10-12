@@ -74,7 +74,7 @@ export default function Register() {
               </p>
               {isRegisterd ? (
                 <button
-                  className="inline-flex items-center justify-center bg-secondary mt-10 px-6 py-4 text-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide w-full"
+                  className="rounded-lg inline-flex items-center justify-center bg-secondary mt-10 px-6 py-4 text-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide w-full"
                   onClick={() => router.push("/login")}
                 >
                   Login
@@ -110,7 +110,7 @@ export default function Register() {
                     ) : null
                   )}
                   <button
-                    className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide disabled:opacity-80"
+                    className="rounded-lg inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide disabled:opacity-80"
                     disabled={!isFormValid()}
                     onClick={handleRegisterOnSubmit}
                   >

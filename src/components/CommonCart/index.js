@@ -50,7 +50,7 @@ export default function CommonCart({
                               </p>
                               <button
                                 type="button"
-                                className="font-medium text-yellow-700 sm:order-2"
+                                className="font-medium text-yellow-700 sm:order-2 rounded-lg"
                                 onClick={() =>
                                   handleDeleteCartItem(cartItem._id)
                                 }
@@ -112,7 +112,7 @@ export default function CommonCart({
                 <div className="mt-5 text-center">
                   <button
                     disabled={cartItems && cartItems.length === 0}
-                    className="disabled:opacity-50 group inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide"
+                    className="disabled:opacity-50 group inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide rounded-lg"
                   >
                     Checkout
                   </button>

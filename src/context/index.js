@@ -4,7 +4,14 @@ import Cookies from "js-cookie";
 import { createContext, useEffect, useState } from "react";
 
 export const GlobalContext = createContext(null);
-
+export const initailCheckoutFormData = {
+  shippingAddress: {},
+  paymentMethod: "",
+  totalPrice: 0,
+  isPaid: false,
+  paidAt: new Date(),
+  isProcessing: true,
+};
 export default function GlobalState({ children }) {
   const [showNavModal, setShowNavModal] = useState(false);
   const [pageLoader, setPageLoader] = useState(true);
@@ -25,14 +32,18 @@ export default function GlobalState({ children }) {
     postalCode: "",
     address: "",
   });
-
+  const [checkoutFormData, setCheckoutFormData] = useState(
+    initailCheckoutFormData
+  );
   //when we refresh the page, if the user's token is present in cookie, that means they are authenticated
   useEffect(() => {
     if (Cookies.get("token") !== undefined) {
       setIsAuthUser(true);
       //we will fetch user data from localStorage, if user don't have any data as of now we will fetch an empty object
       const userData = JSON.parse(localStorage.getItem("user")) || {};
+      const getCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
       setUser(userData);
+      setCartItems(getCartItems);
     } else {
       setIsAuthUser(false);
       setUser({});
@@ -62,6 +73,8 @@ export default function GlobalState({ children }) {
         setAddresses,
         addressFormData,
         setAddressFormData,
+        checkoutFormData,
+        setCheckoutFormData,
       }}
     >
       {children}
