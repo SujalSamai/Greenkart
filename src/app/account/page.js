@@ -135,7 +135,7 @@ export default function Account() {
                 {user?.name}
               </h4>
               <p>{user?.email}</p>
-              <p>{user?.role}</p>
+              <p>{user?.role.replace(/\b\w/g, (s) => s.toUpperCase())}</p>
             </div>
             <button className="rounded-lg mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide">
               View Your Orders

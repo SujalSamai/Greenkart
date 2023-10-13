@@ -12,10 +12,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={`${outfit.variable} ${bricolage.variable} bg-primary`}>
         <GlobalState>
           <Navbar />
-          <main className="flex flex-col min-h-screen mt-[80px]">{children}</main>
+          <main className="flex flex-col min-h-screen mt-[80px]">
+            {children}
+          </main>
         </GlobalState>
       </body>
     </html>
