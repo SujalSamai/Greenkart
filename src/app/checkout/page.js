@@ -2,10 +2,14 @@
 
 import { GlobalContext } from "@/context";
 import { fetchAllAddresses } from "@/services/address";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { callStripeSession } from "@/services/stripe";
+import { PulseLoader } from "react-spinners";
+import { toast } from "react-toastify";
+import Notification from "@/components/Notification";
+import { createNewOrder } from "@/services/order";
 
 export default function Checkout() {
   const {
@@ -18,8 +22,10 @@ export default function Checkout() {
   } = useContext(GlobalContext);
   const [selectedAddress, setSelectedAddress] = useState(null);
   const [isOrderProcessing, setIsOrderProcessing] = useState(false);
+  const [orderSuccess, setOrderSuccess] = useState(false);
 
   const router = useRouter();
+  const params = useSearchParams();
   // console.log("checkout", cartItems);
 
   const publishableKey =
@@ -36,6 +42,57 @@ export default function Checkout() {
   useEffect(() => {
     getAllAddresses();
   }, [user]);
+
+  useEffect(() => {
+    async function createFinalOrder() {
+      const isStripe = JSON.parse(localStorage.getItem("stripe"));
+
+      if (
+        isStripe &&
+        params.get("status") === "success" &&
+        cartItems &&
+        cartItems.length > 0
+      ) {
+        setIsOrderProcessing(true);
+        const getCheckOutFormData = JSON.parse(
+          localStorage.getItem("checkoutFormData")
+        );
+
+        const createFinalCheckoutFormData = {
+          user: user?._id,
+          shippingAddress: getCheckOutFormData.shippingAddress,
+          orderItems: cartItems.map((item) => ({
+            qty: 1,
+            product: item.productID,
+          })),
+          paymentMethod: "Stripe",
+          totalPrice: cartItems.reduce(
+            (total, item) => item.productID.price + total,
+            0
+          ),
+          isPaid: true,
+          isProcessing: true,
+          paidAt: new Date(),
+        };
+        const res = await createNewOrder(createFinalCheckoutFormData);
+
+        if (res.success) {
+          setIsOrderProcessing(false);
+          setOrderSuccess(true);
+          toast.success(res.message, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        } else {
+          setIsOrderProcessing(false);
+          setOrderSuccess(false);
+          toast.error(res.message, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        }
+      }
+    }
+    createFinalOrder();
+  }, [params.get("status"), cartItems]);
 
   function handleSelectedAddress(getAddress) {
     if (getAddress._id === selectedAddress) {
@@ -87,6 +144,47 @@ export default function Checkout() {
   }
   //   console.log("address", addresses);
   // console.log("checkout form data", checkoutFormData);
+
+  useEffect(() => {
+    if (orderSuccess) {
+      setTimeout(() => {
+        router.push("/orders");
+      }, [2000]);
+    }
+  }, [orderSuccess]);
+
+  if (orderSuccess) {
+    return (
+      <section className="h-screen bg-gray-200">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mt-8 max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
+            <div className="bg-white shadow">
+              <div className="px-4 py-6 sm:px-8 sm:py-10 flex flex-col gap-5">
+                <h1 className="font-bold text-lg">
+                  Your payment is successfull and you will be redirected to
+                  orders page in 2 seconds !
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (isOrderProcessing) {
+    return (
+      <div className="w-full min-h-screen flex justify-center items-center">
+        <PulseLoader
+          color={"#000000"}
+          loading={isOrderProcessing}
+          size={30}
+          data-testid="loader"
+        />
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
@@ -206,6 +304,7 @@ export default function Checkout() {
           </div>
         </div>
       </div>
+      <Notification />
     </div>
   );
 }

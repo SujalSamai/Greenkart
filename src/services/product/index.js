@@ -22,10 +22,13 @@ export const getAllAdminProducts = async () => {
   try {
     // in order to fetch data from server, we have to provide base url to the fetch method like this http://localhost:3000/api/admin/all-products
 
-    const res = await fetch("http://localhost:3000/api/admin/all-products", {
-      method: "GET",
-      cache: "no-store",
-    });
+    const res = await fetch(
+      process.env.SERVER_URL + "/api/admin/all-products",
+      {
+        method: "GET",
+        cache: "no-store",
+      }
+    );
     const data = await res.json();
     return data;
   } catch (error) {
@@ -72,7 +75,7 @@ export const deleteAProduct = async (id) => {
 export const productByCategory = async (id) => {
   try {
     const res = await fetch(
-      `http://localhost:3000/api/admin/product-by-category?id=${id}`,
+      process.env.SERVER_URL + `/api/admin/product-by-category?id=${id}`,
       {
         method: "GET",
         cache: "no-store",
@@ -89,7 +92,7 @@ export const productByCategory = async (id) => {
 export const productById = async (id) => {
   try {
     const res = await fetch(
-      `http://localhost:3000/api/admin/product-by-id?id=${id}`,
+      process.env.SERVER_URL + `/api/admin/product-by-id?id=${id}`,
       {
         method: "GET",
         cache: "no-store",

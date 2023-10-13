@@ -1,6 +1,7 @@
 "use client";
 
 import Cookies from "js-cookie";
+import { usePathname, useRouter } from "next/navigation";
 import { createContext, useEffect, useState } from "react";
 
 export const GlobalContext = createContext(null);
@@ -12,6 +13,23 @@ export const initailCheckoutFormData = {
   paidAt: new Date(),
   isProcessing: true,
 };
+
+const protectedRoutes = [
+  "cart",
+  "checkout",
+  "account",
+  "orders",
+  "admin-view",
+  "admin-view/all-products",
+  "admin-view/add-product",
+];
+
+const protectedAdminRoutes = [
+  "/admin-view",
+  "/admin-view/add-product",
+  "/admin-view/all-products",
+];
+
 export default function GlobalState({ children }) {
   const [showNavModal, setShowNavModal] = useState(false);
   const [pageLoader, setPageLoader] = useState(true);
@@ -35,6 +53,10 @@ export default function GlobalState({ children }) {
   const [checkoutFormData, setCheckoutFormData] = useState(
     initailCheckoutFormData
   );
+
+  const router = useRouter();
+  const pathName = usePathname();
+
   //when we refresh the page, if the user's token is present in cookie, that means they are authenticated
   useEffect(() => {
     if (Cookies.get("token") !== undefined) {
@@ -49,6 +71,29 @@ export default function GlobalState({ children }) {
       setUser({});
     }
   }, [Cookies]);
+
+  useEffect(() => {
+    if (
+      pathName !== "/register" &&
+      !pathName.includes("product") &&
+      pathName !== "/" &&
+      user &&
+      Object.keys(user).length === 0 &&
+      protectedRoutes.includes(pathName) > -1
+    )
+      router.push("/login");
+  }, [user, pathName]);
+
+  useEffect(() => {
+    if (
+      user !== null &&
+      user &&
+      Object.keys(user).length > 0 &&
+      user?.role !== "admin" &&
+      protectedAdminRoutes.indexOf(pathName) > -1
+    )
+      router.push("/unauthorized-page");
+  }, [user, pathName]);
 
   return (
     <GlobalContext.Provider
