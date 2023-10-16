@@ -140,7 +140,7 @@ export default function Account() {
               <p>{user?.role.replace(/\b\w/g, (s) => s.toUpperCase())}</p>
             </div>
             <button
-              onClick={() => router.push('/orders')}
+              onClick={() => router.push(`/orders`)}
               className="rounded-lg mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide"
             >
               View Your Orders

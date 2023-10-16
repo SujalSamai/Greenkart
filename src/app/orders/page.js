@@ -56,7 +56,7 @@ export default function Orders() {
   }
 
   return (
-    <section className=" bg-coolmint">
+    <section>
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mt-8 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div>
@@ -67,7 +67,7 @@ export default function Orders() {
                     {allOrdersForUser.map((item) => (
                       <li
                         key={item._id}
-                        className="bg-white shadow p-5 flex flex-col space-y-3 py-6 text-left"
+                        className="bg-coolmint shadow p-5 flex flex-col space-y-3 py-6 text-left"
                       >
                         <div className="flex">
                           <h1 className="font-bold text-lg mb-3 flex-1">
@@ -78,7 +78,7 @@ export default function Orders() {
                               Total paid amount
                             </p>
                             <p className="mr-3 text-2xl font-semibold text-gray-900">
-                              ${item.totalPrice}
+                              Rs{item.totalPrice}
                             </p>
                           </div>
                         </div>
@@ -104,8 +104,8 @@ export default function Orders() {
                               : "Order is delivered"}
                           </button>
                           <button
-                            onClick={() => router.push("/orders/${item._id}")}
-                            className="disabled:opacity-50 mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-lg"
+                            onClick={() => router.push(`/orders/${item._id}`)}
+                            className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-lg"
                           >
                             View Order Details
                           </button>
