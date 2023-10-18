@@ -49,7 +49,7 @@ export default function OrderDetails() {
     <div className="mt-5 py-14 px-6 md:px-6">
       <div className="flex justify-start items-start space-y-2 flex-col">
         <h1 className="text-3xl lg:text-4xl font-bold leading-7 lg:leading-9 text-gray-900">
-          Order #{orderDetails._id}
+          Order #{orderDetails && orderDetails._id}
         </h1>
         <p className="text-base font-medium leading-6 text-gray-600">
           {orderDetails &&
@@ -120,47 +120,47 @@ export default function OrderDetails() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-5">
-            <div className="bg-gray-50 w-full xl:w-96 flex items-center md:items-start px-4 py-6 flex-col">
-              <h3 className="text-xl font-semibold leading-6 text-gray-900">
-                Customer details
-              </h3>
-              <div className="flex flex-col justify-start flex-shrink-0">
-                <div className="flex justify-center gap-4 flex-col w-full md:justify-start py-8 border-b border-gray-200">
-                  <p className="text-base font-semibold leading-4 text-left text-gray-950">
-                    Name: {user?.name}
-                  </p>
-                  <p className="text-base font-semibold leading-4 text-left text-gray-950">
-                    Email: {user?.email}
-                  </p>
-                </div>
+        </div>
+        <div className="flex flex-col gap-5">
+          <div className="bg-gray-50 w-full xl:w-96 flex items-center md:items-start px-4 py-6 flex-col">
+            <h3 className="text-xl font-semibold leading-6 text-gray-900">
+              Customer details
+            </h3>
+            <div className="flex flex-col justify-start flex-shrink-0">
+              <div className="flex justify-center gap-4 flex-col w-full md:justify-start py-8 border-b border-gray-200">
+                <p className="text-base font-semibold leading-4 text-left text-gray-950">
+                  Name: {user?.name}
+                </p>
+                <p className="text-base font-semibold leading-4 text-left text-gray-950">
+                  Email: {user?.email}
+                </p>
               </div>
             </div>
-            <div className="flex justify-between xl:h-full items-stretch w-full flex-col mt-6 md:mt-0">
-              <div className="flex justify-center md:justify-start xl:flex-col flex-col md:space-x-6 lg:space-x-8 xl:spce-x-0 space-y-4 md:space-y-0 xl:space-y-12 md:flex-row item-center md:items-start">
-                <div className="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4 xl:mt-8">
-                  <p>Shipping Address</p>
-                  <p>
-                    Address :{" "}
-                    {orderDetails && orderDetails.shippingAddress.address}
-                  </p>
-                  <p>
-                    City : {orderDetails && orderDetails.shippingAddress.city}
-                  </p>
-                  <p>
-                    Country :{" "}
-                    {orderDetails && orderDetails.shippingAddress.country}
-                  </p>
-                  <p>
-                    Postal Code :{" "}
-                    {orderDetails && orderDetails.shippingAddress.postalCode}
-                  </p>
-                </div>
+          </div>
+          <div className="flex justify-between xl:h-full items-stretch w-full flex-col mt-6 md:mt-0">
+            <div className="flex justify-center md:justify-start xl:flex-col flex-col md:space-x-6 lg:space-x-8 xl:spce-x-0 space-y-4 md:space-y-0 xl:space-y-12 md:flex-row item-center md:items-start">
+              <div className="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4 xl:mt-8">
+                <p>Shipping Address</p>
+                <p>
+                  Address :{" "}
+                  {orderDetails && orderDetails.shippingAddress.address}
+                </p>
+                <p>
+                  City : {orderDetails && orderDetails.shippingAddress.city}
+                </p>
+                <p>
+                  Country :{" "}
+                  {orderDetails && orderDetails.shippingAddress.country}
+                </p>
+                <p>
+                  Postal Code :{" "}
+                  {orderDetails && orderDetails.shippingAddress.postalCode}
+                </p>
               </div>
             </div>
           </div>
           <button
-            onClick={() => router.push(`/`)}
+            onClick={() => router.push(`/product/listing/all-products`)}
             className=" mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-lg"
           >
             Shop Again
