@@ -87,7 +87,7 @@ export default function OrderDetails() {
                       </div>
                       <div className="w-full flex justify-between items-start space-x-8">
                         <h3 className="text-xl font-semibold leading-6 text-gray-900">
-                          Rs{item && item.product && item.product.price}
+                        ₹{item && item.product && item.product.price}
                         </h3>
                       </div>
                     </div>
@@ -104,7 +104,7 @@ export default function OrderDetails() {
                 <div className="flex justify-between w-full">
                   <p className="text-base leading-5 text-gray-800">Subtotal</p>
                   <p className="text-base leading-5 text-gray-900">
-                    Rs{orderDetails && orderDetails.totalPrice}
+                  ₹{orderDetails && orderDetails.totalPrice}
                   </p>
                 </div>
                 <div className="flex justify-between w-full">
@@ -114,7 +114,7 @@ export default function OrderDetails() {
                 <div className="flex justify-between w-full">
                   <p className="text-base leading-5 text-gray-800">Subtotal</p>
                   <p className="text-base leading-5 text-gray-900">
-                    Rs{orderDetails && orderDetails.totalPrice}
+                  ₹{orderDetails && orderDetails.totalPrice}
                   </p>
                 </div>
               </div>

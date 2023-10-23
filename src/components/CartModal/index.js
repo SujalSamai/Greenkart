@@ -88,7 +88,7 @@ export default function CartModal() {
                       </h3>
                     </div>
                     <p className="mt-1 text-xs text-gray-600">
-                      Rs.
+                    ₹
                       {cartItem &&
                         cartItem.productID &&
                         cartItem.productID.price}

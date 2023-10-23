@@ -20,8 +20,6 @@ const protectedRoutes = [
   "account",
   "orders",
   "admin-view",
-  "admin-view/all-products",
-  "admin-view/add-product",
 ];
 
 const protectedAdminRoutes = [

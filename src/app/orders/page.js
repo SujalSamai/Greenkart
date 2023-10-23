@@ -78,7 +78,7 @@ export default function Orders() {
                               Total paid amount
                             </p>
                             <p className="mr-3 text-2xl font-semibold text-gray-900">
-                              Rs{item.totalPrice}
+                              ₹{item.totalPrice}
                             </p>
                           </div>
                         </div>
@@ -113,7 +113,13 @@ export default function Orders() {
                       </li>
                     ))}
                   </ul>
-                ) : null}
+                ) : (
+                  <div>
+                    <h1 className="font-bold text-xl mt-8">
+                      No orders found!
+                    </h1>
+                  </div>
+                )}
               </div>
             </div>
           </div>
