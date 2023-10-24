@@ -71,7 +71,7 @@ export default function Orders() {
                       >
                         <div className="flex">
                           <h1 className="font-bold text-lg mb-3 flex-1">
-                            #order: {item._id}
+                            OrderID: #{item._id}
                           </h1>
                           <div className="flex items-center">
                             <p className="mr-3 text-sm font-medium text-gray-900">
@@ -115,9 +115,7 @@ export default function Orders() {
                   </ul>
                 ) : (
                   <div>
-                    <h1 className="font-bold text-xl mt-8">
-                      No orders found!
-                    </h1>
+                    <h1 className="font-bold text-xl mt-8">No orders found!</h1>
                   </div>
                 )}
               </div>
