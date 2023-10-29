@@ -161,7 +161,7 @@ export default function Checkout() {
             <div className="bg-white shadow">
               <div className="px-4 py-6 sm:px-8 sm:py-10 flex flex-col gap-5">
                 <h1 className="font-bold text-lg">
-                  Your payment is successfull and you will be redirected to
+                  Your payment is successful and you will be redirected to
                   orders page in 2 seconds !
                 </h1>
               </div>

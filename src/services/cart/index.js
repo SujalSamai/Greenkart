@@ -22,7 +22,7 @@ export const addToCart = async (formData) => {
 export const getAllCartItems = async (id) => {
   try {
     const res = await fetch(
-      `http://localhost:3000/api/cart/all-cart-items?id=${id}`,
+      process.env.NEXT_PUBLIC_SERVER_URL + `/api/cart/all-cart-items?id=${id}`,
       {
         method: "GET",
         headers: {
