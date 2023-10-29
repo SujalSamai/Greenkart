@@ -31,7 +31,7 @@ export default function CommonCart({
                               cartItem.productID.imageUrl
                             }
                             alt="Product image"
-                            className="rounded-lg object-cover h-24 w-28"
+                            className="rounded-md object-cover h-24 w-28"
                           />
                         </div>
                         <div className="flex flex-1 flex-col justify-between">
@@ -52,7 +52,7 @@ export default function CommonCart({
                               </p>
                               <button
                                 type="button"
-                                className="font-medium text-yellow-700 sm:order-2 rounded-lg"
+                                className="font-medium text-yellow-700 sm:order-2 rounded-md"
                                 onClick={() =>
                                   handleDeleteCartItem(cartItem._id)
                                 }
@@ -97,7 +97,7 @@ export default function CommonCart({
                 </div>
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-gray-400">Shipping</p>
-                  <p className="text-lg text-secondary font-semibold">Rs. 0</p>
+                  <p className="text-lg text-secondary font-semibold">₹0</p>
                 </div>
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-gray-400">Total</p>
@@ -115,7 +115,7 @@ export default function CommonCart({
                   <button
                     onClick={() => router.push("/checkout")}
                     disabled={cartItems && cartItems.length === 0}
-                    className="disabled:opacity-50 group inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide rounded-lg"
+                    className="disabled:opacity-50 group inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide rounded-md"
                   >
                     Checkout
                   </button>

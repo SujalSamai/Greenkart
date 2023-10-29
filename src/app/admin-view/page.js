@@ -112,7 +112,7 @@ export default function AdminView() {
                           <div key={index} className="shrink-0">
                             <img
                               alt="Order Item"
-                              className="h-24 w-24 max-w-full rounded-lg object-cover"
+                              className="h-24 w-24 max-w-full rounded-md object-cover"
                               src={
                                 orderItem &&
                                 orderItem.product &&
@@ -123,7 +123,7 @@ export default function AdminView() {
                         ))}
                       </div>
                       <div className="flex gap-5">
-                        <button className="disabled:opacity-50 mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-lg">
+                        <button className="disabled:opacity-50 mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md">
                           {item.isProcessing
                             ? "Order is Processing"
                             : "Order is delivered"}
@@ -131,7 +131,7 @@ export default function AdminView() {
                         <button
                           onClick={() => handleOrderUpdateStatus(item)}
                           disabled={!item.isProcessing}
-                          className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           {componentLoader &&
                           componentLoader.loading &&

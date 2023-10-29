@@ -28,7 +28,7 @@ export default function Cart() {
       localStorage.setItem("cartItems", JSON.stringify(res.data));
     }
 
-    // console.log(res);
+    console.log("cartItems -> ",res);
   }
 
   useEffect(() => {

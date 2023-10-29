@@ -19,7 +19,7 @@ function NavItems({ isModalView = false, router, isAdminView }) {
       id="nav-items"
     >
       <ul
-        className={`flex flex-col p-4 md:p-0 mt-32 font-medium  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-white ${
+        className={`flex flex-col p-4 md:p-0 mt-32 font-medium  rounded-md md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-white ${
           isModalView ? "border-none" : "border border-gray-100"
         }`}
       >
@@ -101,7 +101,7 @@ export default function Navbar() {
               <Fragment>
                 <button
                   className={
-                    "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-lg hover:text-[#adc3b6]"
+                    "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-md hover:text-[#adc3b6]"
                   }
                   onClick={() => router.push("/account")}
                 >
@@ -109,7 +109,7 @@ export default function Navbar() {
                 </button>
                 <button
                   className={
-                    "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-lg hover:text-[#adc3b6]"
+                    "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-md hover:text-[#adc3b6]"
                   }
                   onClick={() => setShowCartModal(true)}
                 >
@@ -121,7 +121,7 @@ export default function Navbar() {
               isAdminView ? (
                 <button
                   className={
-                    "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-lg hover:text-[#adc3b6]"
+                    "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-md hover:text-[#adc3b6]"
                   }
                   onClick={() => router.push("/")}
                 >
@@ -131,7 +131,7 @@ export default function Navbar() {
                 <button
                   onClick={() => router.push("/admin-view")}
                   className={
-                    "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-lg hover:text-[#adc3b6]"
+                    "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-md hover:text-[#adc3b6]"
                   }
                 >
                   Admin View
@@ -142,7 +142,7 @@ export default function Navbar() {
               <button
                 onClick={handleLogout}
                 className={
-                  "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-lg hover:text-[#adc3b6]"
+                  "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-md hover:text-[#adc3b6]"
                 }
               >
                 Logout
@@ -151,7 +151,7 @@ export default function Navbar() {
               <button
                 onClick={handleLogin}
                 className={
-                  "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-lg hover:text-[#adc3b6]"
+                  "md:mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-[#e5ece9] rounded-md hover:text-[#adc3b6]"
                 }
               >
                 Login
@@ -160,7 +160,7 @@ export default function Navbar() {
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
-              className="inline-flex items-center p-2 text-sm rounded-lg hover:text-[#adc3b6] md:hidden text-[#295339] hover:bg-secondary"
+              className="inline-flex items-center p-2 text-sm rounded-md hover:text-[#adc3b6] md:hidden text-[#295339] hover:bg-secondary"
               aria-controls="navbar-sticky"
               aria-expanded="false"
               onClick={() => {

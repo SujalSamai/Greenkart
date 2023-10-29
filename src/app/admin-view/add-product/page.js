@@ -146,8 +146,9 @@ export default function AdminAddNewProduct() {
 
   return (
     <div className="w-full mt-5 mr-0 mb-0 ml-0 relative">
-      <div className="flex flex-col items-start justify-start p-10 bg-white shadow-2xl rounded-xl relative">
+      <div className="flex flex-col items-start justify-start p-10 bg-white shadow-2xl rounded-md relative">
         <div className="w-full mt-6 mr-0 mb-0 ml-0 space-y-8 text-secondary">
+          <p className="font-bold">Add image of your product below:</p>
           <input
             accept="image/*"
             alt="product-image"
@@ -193,7 +194,7 @@ export default function AdminAddNewProduct() {
             ) : null
           )}
           <button
-            className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide rounded-lg"
+            className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide rounded-md"
             onClick={handleAddProduct}
           >
             {componentLoader && componentLoader.loading ? (

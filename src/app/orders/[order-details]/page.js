@@ -137,10 +137,10 @@ export default function OrderDetails() {
               </div>
             </div>
           </div>
-          <div className="flex justify-between xl:h-full items-stretch w-full flex-col mt-6 md:mt-0">
+          <div className="flex justify-between xl:h-full items-stretch w-full flex-col mt-6 md:mt-0 bg-white">
             <div className="flex justify-center md:justify-start xl:flex-col flex-col md:space-x-6 lg:space-x-8 xl:spce-x-0 space-y-4 md:space-y-0 xl:space-y-12 md:flex-row item-center md:items-start">
-              <div className="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4 xl:mt-8">
-                <p>Shipping Address</p>
+              <div className="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4 px-4 py-6 font-semibold">
+                <h3 className="text-xl leading-6 text-gray-900">Shipping Address</h3>
                 <p>
                   Address :{" "}
                   {orderDetails && orderDetails.shippingAddress.address}
@@ -161,7 +161,7 @@ export default function OrderDetails() {
           </div>
           <button
             onClick={() => router.push(`/product/listing/all-products`)}
-            className=" mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-lg"
+            className=" mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
           >
             Shop Again
           </button>

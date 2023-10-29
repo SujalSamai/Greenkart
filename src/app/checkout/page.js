@@ -190,17 +190,17 @@ export default function Checkout() {
       <div className="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
         <div className="px-4 pt-8">
           <p className="text-2xl font-bold">Cart Summary</p>
-          <div className="mt-4 space-y-3 rounded-lg border bgwhite px-2 py-4 sm:px-5">
+          <div className="mt-4 space-y-3 rounded-md border bgwhite px-2 py-4 sm:px-5">
             {cartItems && cartItems.length ? (
               cartItems.map((item) => (
                 <div
-                  className="flex flex-col rounded-lg bg-white sm:flex-row"
+                  className="flex flex-col rounded-md bg-white sm:flex-row"
                   key={item._id}
                 >
                   <img
                     src={item && item.productID && item.productID.imageUrl}
                     alt="Cart Item"
-                    className="m-2 h-28 w-28 rounded-lg border object-cover object-center"
+                    className="m-2 h-28 w-28 rounded-md border object-cover object-center"
                   />
                   <div className="flex w-full flex-col p-4">
                     <span className="font-bold">
@@ -227,7 +227,7 @@ export default function Checkout() {
               addresses.map((address) => (
                 <div
                   key={address._id}
-                  className={`border-2 p-6 rounded-lg ${
+                  className={`border-2 p-6 rounded-md ${
                     selectedAddress === address._id ? "border-secondary" : ""
                   }`}
                 >
@@ -237,7 +237,7 @@ export default function Checkout() {
                   <p>Country : {address.country}</p>
                   <p>PostalCode : {address.postalCode}</p>
                   <button
-                    className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-lg"
+                    className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
                     onClick={() => handleSelectedAddress(address)}
                   >
                     {address._id === selectedAddress
@@ -256,7 +256,7 @@ export default function Checkout() {
             onClick={() => {
               router.push("/account");
             }}
-            className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-lg"
+            className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
           >
             Add new Address
           </button>
@@ -296,7 +296,7 @@ export default function Checkout() {
                   Object.keys(checkoutFormData.shippingAddress).length === 0
                 }
                 onClick={handleCheckout}
-                className="disabled:opacity-50 disabled:cursor-not-allowed w-full mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-lg"
+                className="disabled:opacity-50 disabled:cursor-not-allowed w-full mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
               >
                 Checkout
               </button>

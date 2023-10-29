@@ -14,7 +14,7 @@ export default function ProductTile({ item }) {
         <img
           src={item.imageUrl}
           alt="product-image"
-          className="h-full w-full object-cover transition-all duration-300 group-hover:scale-125 border border-secondary rounded-sm"
+          className="h-full w-full object-cover transition-all duration-300 group-hover:scale-125 border border-secondary rounded-md"
         />
       </div>
       {item.onSale === "yes" ? (
