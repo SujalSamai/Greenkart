@@ -23,7 +23,7 @@ export const getAllAdminProducts = async () => {
     // in order to fetch data from server, we have to provide base url to the fetch method like this http://localhost:3000/api/admin/all-products
 
     const res = await fetch(
-      process.env.SERVER_URL + "/api/admin/all-products",
+        "http://localhost:3000/api/admin/all-products",
       {
         method: "GET",
         cache: "no-store",
