@@ -41,7 +41,6 @@ export default function Orders() {
   useEffect(() => {
     if (user !== null) extractAllOrders();
   }, [user]);
-  console.log(allOrdersForUser);
   if (pageLoader) {
     return (
       <div className="w-full min-h-screen flex justify-center items-center">

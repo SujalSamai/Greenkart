@@ -33,7 +33,6 @@ export default function AdminView() {
       extractAllOrdersForAllUsers();
     }
   }, [user]);
-  console.log(allOrdersForAllUsers);
 
   async function handleOrderUpdateStatus(getItem) {
     setComponentLoader({ loading: true, id: getItem._id });

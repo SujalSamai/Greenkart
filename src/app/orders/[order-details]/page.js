@@ -24,8 +24,6 @@ export default function OrderDetails() {
     } else {
       setPageLoader(false);
     }
-
-    console.log(res);
   }
 
   useEffect(() => {
@@ -87,7 +85,7 @@ export default function OrderDetails() {
                       </div>
                       <div className="w-full flex justify-between items-start space-x-8">
                         <h3 className="text-xl font-semibold leading-6 text-gray-900">
-                        ₹{item && item.product && item.product.price}
+                          ₹{item && item.product && item.product.price}
                         </h3>
                       </div>
                     </div>
@@ -104,7 +102,7 @@ export default function OrderDetails() {
                 <div className="flex justify-between w-full">
                   <p className="text-base leading-5 text-gray-800">Subtotal</p>
                   <p className="text-base leading-5 text-gray-900">
-                  ₹{orderDetails && orderDetails.totalPrice}
+                    ₹{orderDetails && orderDetails.totalPrice}
                   </p>
                 </div>
                 <div className="flex justify-between w-full">
@@ -114,7 +112,7 @@ export default function OrderDetails() {
                 <div className="flex justify-between w-full">
                   <p className="text-base leading-5 text-gray-800">Subtotal</p>
                   <p className="text-base leading-5 text-gray-900">
-                  ₹{orderDetails && orderDetails.totalPrice}
+                    ₹{orderDetails && orderDetails.totalPrice}
                   </p>
                 </div>
               </div>
@@ -140,7 +138,9 @@ export default function OrderDetails() {
           <div className="flex justify-between xl:h-full items-stretch w-full flex-col mt-6 md:mt-0 bg-white">
             <div className="flex justify-center md:justify-start xl:flex-col flex-col md:space-x-6 lg:space-x-8 xl:spce-x-0 space-y-4 md:space-y-0 xl:space-y-12 md:flex-row item-center md:items-start">
               <div className="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4 px-4 py-6 font-semibold">
-                <h3 className="text-xl leading-6 text-gray-900">Shipping Address</h3>
+                <h3 className="text-xl leading-6 text-gray-900">
+                  Shipping Address
+                </h3>
                 <p>
                   Address :{" "}
                   {orderDetails && orderDetails.shippingAddress.address}

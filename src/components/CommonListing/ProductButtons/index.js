@@ -57,7 +57,6 @@ export default function ProductButtons({ item }) {
       setComponentLoader({ loading: false, id: "" });
       setShowCartModal(false);
     }
-    console.log(res);
   }
   return isAdminView ? (
     <>

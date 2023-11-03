@@ -47,8 +47,6 @@ export default function CartModal() {
       setCartItems(updatedData);
       localStorage.setItem("cartItems", JSON.stringify(updatedData));
     }
-
-    // console.log(res);
   }
 
   useEffect(() => {

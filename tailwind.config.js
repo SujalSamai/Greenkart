@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        para: ["var(--font-outfit)"],
-        heading: ["var(--font-bricolage)"],
+        para: ["var(--font-manrope)"],
+        buttons: ["var(--font-outfit)"],
+        heading: ["var(--font-cirka)"],
       },
       colors: {
         primary: "#e4f4e9",

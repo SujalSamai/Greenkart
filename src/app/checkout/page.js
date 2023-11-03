@@ -26,7 +26,6 @@ export default function Checkout() {
 
   const router = useRouter();
   const params = useSearchParams();
-  // console.log("checkout", cartItems);
 
   const publishableKey =
     "pk_test_51O0cwlSEn9YaE0PU01zNkBlzwF1X94vSiwFOzSbLGCAcOfDuR1OHvCX0XfRoGTIv3q30d5d166a8VgxtKI6kuCF900sXZCxLoC";
@@ -142,8 +141,6 @@ export default function Checkout() {
 
     console.log(error);
   }
-  //   console.log("address", addresses);
-  // console.log("checkout form data", checkoutFormData);
 
   useEffect(() => {
     if (orderSuccess) {

@@ -46,8 +46,6 @@ export default function Cart() {
       setPageLoader(false);
       localStorage.setItem("cartItems", JSON.stringify(updatedData));
     }
-
-    console.log("cartItems -> ", res);
   }
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import GlobalState from "../context";
 import "./globals.css";
-import { outfit, bricolage } from "../utils/Fonts";
+import { outfit, cirka, manrope } from "../utils/Fonts";
 
 export const metadata = {
   title: "GreenKart - Turn it Green.",
@@ -15,7 +15,9 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${outfit.variable} ${bricolage.variable} bg-primary`}>
+      <body
+        className={`${outfit.variable} ${cirka.variable} ${manrope.variable} bg-primary font-para`}
+      >
         <GlobalState>
           <Navbar />
           <main className="flex flex-col min-h-screen mt-[80px]">
