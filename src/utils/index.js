@@ -1,28 +1,33 @@
 export const navOptions = [
   {
-    id: "home",
-    label: "Home",
-    path: "/",
-  },
-  {
     id: "listing",
     label: "All Products",
     path: "/product/listing/all-products",
   },
   {
-    id: "listingMen",
-    label: "Men",
-    path: "/product/listing/men",
+    id: "listingKitchen",
+    label: "Home & Kitchen",
+    path: "/product/listing/kitchen",
   },
   {
-    id: "listingWomen",
-    label: "Women",
-    path: "/product/listing/women",
+    id: "listingContainers",
+    label: "Containers",
+    path: "/product/listing/containers",
   },
   {
-    id: "listingKids",
-    label: "Kids",
-    path: "/product/listing/kids",
+    id: "listingBags",
+    label: "Bags",
+    path: "/product/listing/bags",
+  },
+  {
+    id: "listingFashion",
+    label: "Fashion",
+    path: "/product/listing/fashion",
+  },
+  {
+    id: "listingCosmetics",
+    label: "Cosmetics",
+    path: "/product/listing/cosmetics",
   },
 ];
 
@@ -127,16 +132,24 @@ export const adminAddProductformControls = [
     componentType: "select",
     options: [
       {
-        id: "men",
-        label: "Men",
+        id: "kitchen",
+        label: "Home & Kitchen",
       },
       {
-        id: "women",
-        label: "Women",
+        id: "containers",
+        label: "Containers",
       },
       {
-        id: "kids",
-        label: "Kids",
+        id: "bags",
+        label: "Bags",
+      },
+      {
+        id: "fashion",
+        label: "Fashion",
+      },
+      {
+        id: "cosmetics",
+        label: "Cosmetics",
       },
       {
         id: "all",
@@ -177,32 +190,6 @@ export const adminAddProductformControls = [
   },
 ];
 
-export const AvailableSizes = [
-  {
-    id: "xs",
-    label: "XS",
-  },
-  {
-    id: "s",
-    label: "S",
-  },
-  {
-    id: "m",
-    label: "M",
-  },
-  {
-    id: "l",
-    label: "L",
-  },
-  {
-    id: "x",
-    label: "XL",
-  },
-  {
-    id: "2xl",
-    label: "2XL",
-  },
-];
 
 export const firebaseConfig = {
   apiKey: process.env.API_KEY,

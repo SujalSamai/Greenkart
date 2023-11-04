@@ -95,7 +95,7 @@ export default function CommonDetails({ item }) {
                 ) : null}
               </div>
               <button
-                className="rounded-md mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium tracking-wide uppercase text-white"
+                className="rounded-md mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium tracking-wide uppercase text-white"
                 type="button"
                 onClick={() => handleAddToCart(item)}
               >
