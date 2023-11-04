@@ -24,7 +24,7 @@ const protectedAdminRoutes = [
 
 export default function GlobalState({ children }) {
   const [showNavModal, setShowNavModal] = useState(false);
-  const [pageLoader, setPageLoader] = useState(true);
+  const [pageLoader, setPageLoader] = useState(false);
   const [componentLoader, setComponentLoader] = useState({
     loading: false,
     id: "",

@@ -7,15 +7,13 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Fragment, useContext, useEffect } from "react";
 import { HiMenuAlt1, HiUser, HiEyeOff, HiEye } from "react-icons/hi";
-import {
-  MdSettings,
-  MdShoppingBag,
-  MdOutlinePowerSettingsNew,
-} from "react-icons/md";
+import { MdOutlinePowerSettingsNew } from "react-icons/md";
+import { RxCross1 } from "react-icons/rx";
 import CommonModal from "../CommonModal";
 import CartModal from "../CartModal";
 
 function NavItems({ isModalView = false, router, isAdminView }) {
+  const { showNavModal, setShowNavModal } = useContext(GlobalContext);
   return (
     <div
       className={`items-center justify-between w-full md:flex md:w-auto ${
@@ -24,7 +22,7 @@ function NavItems({ isModalView = false, router, isAdminView }) {
       id="nav-items"
     >
       <ul
-        className={`flex flex-col p-4 md:p-0 mt-32 font-medium    md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-transparent ${
+        className={`flex flex-col p-4 md:p-0 font-medium md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-transparent ${
           isModalView ? "border-none" : "border border-gray-100"
         }`}
       >
@@ -89,6 +87,7 @@ export default function Navbar() {
 
   function handleLogin() {
     router.push("/login");
+    setShowNavModal(false);
   }
 
   return (
@@ -118,7 +117,7 @@ export default function Navbar() {
                     title="Account"
                     src="https://img.icons8.com/3d-fluency/94/user-male-circle.png"
                     alt="user-male-circle"
-                    className="w-8 h-8 hover:scale-110 transition-all duration-200 ease-in"
+                    className="w-8 h-8 hover:scale-110 transition-all duration-200 ease-in m-1"
                   />
                   <span className="text-xs hidden md:block">account</span>
                 </button>
@@ -130,7 +129,7 @@ export default function Navbar() {
                     title="Cart"
                     src="https://img.icons8.com/3d-fluency/94/shopping-cart-loaded.png"
                     alt="shopping-cart-loaded"
-                    className="w-8 h-8 hover:scale-110 transition-all duration-200 ease-in"
+                    className="w-8 h-8 hover:scale-110 transition-all duration-200 ease-in m-1"
                   />
                   <span className="text-xs hidden md:block">cart</span>
                 </button>
@@ -159,7 +158,7 @@ export default function Navbar() {
                     title="Admin View"
                     src="https://img.icons8.com/3d-fluency/94/user-shield.png"
                     alt="user-shield"
-                    className="w-8 h-8 hover:scale-110 transition-all duration-200 ease-in"
+                    className="w-8 h-8 hover:scale-110 transition-all duration-200 ease-in m-1"
                   />
                   <span className="text-xs hidden md:block">admin</span>
                 </button>
@@ -173,8 +172,8 @@ export default function Navbar() {
                 }
               >
                 <MdOutlinePowerSettingsNew
-                  title="LogOut"
-                  className="w-8 h-8 md:w-5 md:h-6 text-red-600"
+                  title="Log Out"
+                  className="w-8 h-8 md:w-5 md:h-6 text-red-600 m-1"
                 />
                 <span className="hidden md:block">Logout</span>
               </button>
@@ -200,7 +199,11 @@ export default function Navbar() {
               }}
             >
               <span className="sr-only">Open main menu</span>
-              <HiMenuAlt1 className="text-3xl" />
+              {showNavModal ? (
+                <RxCross1 className="text-2xl" />
+              ) : (
+                <HiMenuAlt1 className="text-3xl" />
+              )}
             </button>
           </div>
           <NavItems router={router} isAdminView={isAdminView} />

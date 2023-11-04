@@ -110,7 +110,7 @@ export default function Register() {
                     ) : null
                   )}
                   <button
-                    className="rounded-md inline-flex w-full items-center justify-center bg-secondary px-6 py-2 md:py-4 text-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide disabled:opacity-80"
+                    className="rounded-md inline-flex w-full items-center justify-center bg-secondary px-6 py-2 md:py-4 text-lg text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide disabled:opacity-80 disabled:cursor-not-allowed"
                     disabled={!isFormValid()}
                     onClick={handleRegisterOnSubmit}
                   >
