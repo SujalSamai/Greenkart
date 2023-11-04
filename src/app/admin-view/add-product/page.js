@@ -8,7 +8,6 @@ import Notification from "@/components/Notification";
 import { GlobalContext } from "@/context";
 import { addNewProduct, updateAProduct } from "@/services/product";
 import {
-  AvailableSizes,
   adminAddProductformControls,
   firebaseConfig,
   firebaseStroageURL,
@@ -145,24 +144,28 @@ export default function AdminAddNewProduct() {
   return (
     <div className="w-full mt-5 mr-0 mb-0 ml-0 relative">
       <div className="flex flex-col items-start justify-start p-10 bg-white shadow-2xl rounded-md relative">
+        <h1 className="text-5xl text-secondary font-heading font-bold">
+          Add your product
+        </h1>
         <div className="w-full mt-6 mr-0 mb-0 ml-0 space-y-8 text-secondary">
           <p className="font-bold">Add image of your product below:</p>
-          <input
-            accept="image/*"
-            alt="product-image"
-            max="1000000"
-            type="file"
-            onChange={handleImage}
-          />
-
-          <div className="flex gap-2 flex-col text-secondary">
-            <label>Available Sizes</label>
-            <TileComponent
-              data={AvailableSizes}
-              onClick={handleTileClick}
-              selected={formData.sizes}
+          <label
+            for="images"
+            className="flex gap-5 flex-col justify-center items-center h-56 p-6 border-2 border-dashed border-[#555] cursor-pointer rounded-lg transition-all duration-200 ease-in-out"
+            id="dropcontainer"
+          >
+            <span class="drop-title">Drop images here</span> or{" "}
+            <input
+              accept="image/*"
+              alt="product-image"
+              max="1000000"
+              type="file"
+              onChange={handleImage}
+              className=" file:bg-secondary file:text-primary file:p-2 file:rounded-lg rounded-lg border border-secondary px-2 py-2 mr-5 cursor-pointer file:cursor-pointer file:mr-8 file:text-sm"
+              required
             />
-          </div>
+          </label>
+
           {adminAddProductformControls.map((controlItem) =>
             controlItem.componentType === "input" ? (
               <InputComponent
