@@ -60,37 +60,39 @@ export default function ProductButtons({ item }) {
   }
   return isAdminView ? (
     <>
-      <button
-        className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md"
-        onClick={() => {
-          setCurrentUpdatedProduct(item);
-          router.push("/admin-view/add-product");
-        }}
-      >
-        Update Info
-      </button>
-      <button
-        onClick={() => handleDeleteProduct(item)}
-        className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md"
-      >
-        {componentLoader &&
-        componentLoader.loading &&
-        componentLoader._id === item.id ? (
-          <ComponentLevelLoader
-            text={"Deleting Product"}
-            color={"#ffffff"}
-            loading={componentLoader && componentLoader.loading}
-          />
-        ) : (
-          "Delete Item"
-        )}
-      </button>
+      <div className="p-2">
+        <button
+          className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:text-[#adc3b6]"
+          onClick={() => {
+            setCurrentUpdatedProduct(item);
+            router.push("/admin-view/add-product");
+          }}
+        >
+          Update Info
+        </button>
+        <button
+          onClick={() => handleDeleteProduct(item)}
+          className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:text-[#adc3b6]"
+        >
+          {componentLoader &&
+          componentLoader.loading &&
+          componentLoader._id === item.id ? (
+            <ComponentLevelLoader
+              text={"Deleting Product"}
+              color={"#ffffff"}
+              loading={componentLoader && componentLoader.loading}
+            />
+          ) : (
+            "Delete Item"
+          )}
+        </button>
+      </div>
     </>
   ) : (
     <>
       <button
         onClick={() => handleAddToCart(item)}
-        className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:text-[#adc3b6]"
+        className="m-2 mt-1.5 flex w-11/12 justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:text-[#adc3b6]"
       >
         {componentLoader &&
         componentLoader.loading &&

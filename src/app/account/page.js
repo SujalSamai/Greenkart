@@ -124,14 +124,14 @@ export default function Account() {
 
   return (
     <section>
-      <div className="mx-auto bg-gray-100 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto bg-gray-100 px-4 sm:px-6 lg:px-8 mt-6">
         <div className="bg-white shadow">
           <div className="p-6 sm:p-12">
             <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
               {/* we have render random user image here */}
             </div>
             <div className="flex flex-col flex-1">
-              <h4 className="text-lg font-semibold text-center md:text-left">
+              <h4 className="text-lg font-semibold text-left">
                 {user?.name}
               </h4>
               <p>{user?.email}</p>
@@ -161,7 +161,7 @@ export default function Account() {
                         <p>Address : {item.address}</p>
                         <p>City : {item.city}</p>
                         <p>Country : {item.country}</p>
-                        <p>PostalCode : {item.postalCode}</p>
+                        <p>Postal Code : {item.postalCode}</p>
                         <button
                           onClick={() => handleUpdateAddress(item)}
                           className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
@@ -189,7 +189,7 @@ export default function Account() {
                       </div>
                     ))
                   ) : (
-                    <p>No address found ! Please add a new address below.</p>
+                    <p className="text-md text-secondary">No address found ! Please add a new address below.</p>
                   )}
                 </div>
               )}

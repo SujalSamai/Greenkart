@@ -161,11 +161,10 @@ export default function AdminAddNewProduct() {
               max="1000000"
               type="file"
               onChange={handleImage}
-              className=" file:bg-secondary file:text-primary file:p-2 file:rounded-lg rounded-lg border border-secondary px-2 py-2 mr-5 cursor-pointer file:cursor-pointer file:mr-8 file:text-sm"
+              className="flex file:ml-12 file:bg-secondary file:text-primary file:p-2 file:rounded-lg rounded-lg border border-secondary p-2 cursor-pointer file:cursor-pointer file:mr-8 file:text-sm"
               required
             />
           </label>
-
           {adminAddProductformControls.map((controlItem) =>
             controlItem.componentType === "input" ? (
               <InputComponent
@@ -195,7 +194,7 @@ export default function AdminAddNewProduct() {
             ) : null
           )}
           <button
-            className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide rounded-md"
+            className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide rounded-md hover:text-[#adc3b6]"
             onClick={handleAddProduct}
           >
             {componentLoader && componentLoader.loading ? (

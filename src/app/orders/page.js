@@ -60,23 +60,24 @@ export default function Orders() {
         <div className="mt-8 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div>
             <div className="px-4 py-6 sm:px-8 sm:py-10">
+            <div className="mb-4 text-4xl font-heading font-bold">Your Orders</div>
               <div className="flow-root">
                 {allOrdersForUser && allOrdersForUser.length ? (
                   <ul className="flex flex-col gap-4">
                     {allOrdersForUser.map((item) => (
                       <li
                         key={item._id}
-                        className="bg-coolmint shadow p-5 flex flex-col space-y-3 py-6 text-left"
+                        className="bg-coolmint p-5 flex flex-col space-y-3 py-6 text-left shadow-lg shadow-secondary/30"
                       >
-                        <div className="flex">
+                        <div className="flex md:flex-row flex-col">
                           <h1 className="font-bold text-lg mb-3 flex-1">
                             OrderID: #{item._id}
                           </h1>
                           <div className="flex items-center">
-                            <p className="mr-3 text-sm font-medium text-gray-900">
-                              Total paid amount
+                            <p className="mr-3 text-md font-medium text-gray-900">
+                              Total paid amount:
                             </p>
-                            <p className="mr-3 text-2xl font-semibold text-gray-900">
+                            <p className="mr-3 text-xl font-semibold text-gray-900">
                               ₹{item.totalPrice}
                             </p>
                           </div>

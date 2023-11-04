@@ -31,16 +31,22 @@ function NavItems({ isModalView = false, router, isAdminView }) {
               <li
                 className="cursor-pointer block py-2 pl-3 pr-4 lowercase md:p-0 hover:text-[#adc3b6]"
                 key={item.id}
-                onClick={() => router.push(item.path)}
+                onClick={() => {
+                  router.push(item.path);
+                  setShowNavModal(false);
+                }}
               >
                 {item.label}
               </li>
             ))
           : navOptions.map((item) => (
               <li
-                className="cursor-pointer block py-2 pl-3 pr-4 lowercase md:p-0 hover:text-[#adc3b6]"
+                className="cursor-pointer block py-2 pl-3 pr-4 lowercase md:p-0 hover:text-[#adc3b6] border-b border-black rounded-sm md:border-none my-2"
                 key={item.id}
-                onClick={() => router.push(item.path)}
+                onClick={() => {
+                  router.push(item.path);
+                  setShowNavModal(false);
+                }}
               >
                 {item.label}
               </li>
@@ -81,6 +87,8 @@ export default function Navbar() {
     Cookies.remove("token");
     localStorage.clear();
     router.push("/");
+    setShowNavModal(false);
+    setShowCartModal(false);
   }
 
   const isAdminView = pathName.includes("admin-view");
@@ -111,7 +119,11 @@ export default function Navbar() {
               <Fragment>
                 <button
                   className={"md:mt-1.5 flex flex-col items-center"}
-                  onClick={() => router.push("/account")}
+                  onClick={() => {
+                    router.push("/account");
+                    setShowNavModal(false);
+                    setShowCartModal(false);
+                  }}
                 >
                   <img
                     title="Account"
@@ -123,7 +135,10 @@ export default function Navbar() {
                 </button>
                 <button
                   className={"md:mt-1.5 flex flex-col items-center"}
-                  onClick={() => setShowCartModal(true)}
+                  onClick={() => {
+                    setShowCartModal(true);
+                    setShowNavModal(false);
+                  }}
                 >
                   <img
                     title="Cart"
@@ -139,7 +154,11 @@ export default function Navbar() {
               isAdminView ? (
                 <button
                   className={"md:mt-1.5 flex flex-col items-center"}
-                  onClick={() => router.push("/")}
+                  onClick={() => {
+                    router.push("/");
+                    setShowNavModal(false);
+                    setShowCartModal(false);
+                  }}
                 >
                   <img
                     title="Client View"
@@ -151,7 +170,11 @@ export default function Navbar() {
                 </button>
               ) : (
                 <button
-                  onClick={() => router.push("/admin-view")}
+                  onClick={() => {
+                    router.push("/admin-view");
+                    setShowNavModal(false);
+                    setShowCartModal(false);
+                  }}
                   className={"md:mt-1.5 flex flex-col items-center"}
                 >
                   <img
@@ -196,6 +219,7 @@ export default function Navbar() {
               aria-expanded="false"
               onClick={() => {
                 showNavModal ? setShowNavModal(false) : setShowNavModal(true);
+                setShowCartModal(false);
               }}
             >
               <span className="sr-only">Open main menu</span>

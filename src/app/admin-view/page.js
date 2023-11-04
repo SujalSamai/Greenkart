@@ -66,6 +66,9 @@ export default function AdminView() {
     <section>
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div>
+          <div className="mt-6 text-5xl mx-4 font-bold text-secondary font-heading">
+            Manage Your Orders
+          </div>
           <div className="px-4 py-6 sm:px-8 sm:py-10">
             <div className="flow-root">
               {allOrdersForAllUsers && allOrdersForAllUsers.length ? (
@@ -73,34 +76,34 @@ export default function AdminView() {
                   {allOrdersForAllUsers.map((item) => (
                     <li
                       key={item._id}
-                      className="bg-coolmint shadow p-5 flex flex-col space-y-3 py-6 text-left"
+                      className="bg-coolmint p-5 flex flex-col space-y-3 py-6 text-left my-2 shadow-lg shadow-secondary/30"
                     >
-                      <div className="flex">
-                        <h1 className="font-bold text-lg mb-3 flex-1">
+                      <div className="flex flex-col md:flex-row">
+                        <h1 className="font-bold text-lg mb-3 flex-1 border-b border-black">
                           OrderID: #{item._id}
                         </h1>
                         <div className="flex flex-col gap-2">
-                          <div className="flex items-center">
-                            <p className="mr-3 text-sm font-medium text-gray-900">
+                          <div className="flex items-center my-0.5">
+                            <p className="mr-1 text-sm font-medium text-gray-900">
                               User Name :
                             </p>
-                            <p className="text-sm font-semibold text-gray-900">
+                            <p className="text-sm font-bold text-gray-900">
                               {item?.user?.name}
                             </p>
                           </div>
-                          <div className="flex items-center">
-                            <p className="mr-3 text-sm font-medium text-gray-900">
+                          <div className="flex items-center my-0.5">
+                            <p className="mr-1 text-sm font-medium text-gray-900">
                               Email :
                             </p>
-                            <p className="text-sm font-semibold text-gray-900">
+                            <p className="text-sm font-bold text-gray-900">
                               {item?.user?.email}
                             </p>
                           </div>
-                          <div className="flex items-center">
-                            <p className="mr-3 text-sm font-medium text-gray-900">
+                          <div className="flex items-center my-0.5">
+                            <p className="mr-1 text-sm font-medium text-gray-900">
                               Total Amount Paid :
                             </p>
-                            <p className="text-sm font-semibold text-gray-900">
+                            <p className="text-sm font-bold text-gray-900">
                               ₹{item?.totalPrice}
                             </p>
                           </div>

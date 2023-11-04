@@ -191,13 +191,13 @@ export default function Checkout() {
             {cartItems && cartItems.length ? (
               cartItems.map((item) => (
                 <div
-                  className="flex flex-col rounded-md bg-white sm:flex-row"
+                  className="flex rounded-md bg-white flex-row"
                   key={item._id}
                 >
                   <img
                     src={item && item.productID && item.productID.imageUrl}
                     alt="Cart Item"
-                    className="m-2 h-28 w-28 rounded-md border object-cover object-center"
+                    className="m-2 aspect-square h-28 w-28 rounded-md object-cover object-center"
                   />
                   <div className="flex w-full flex-col p-4">
                     <span className="font-bold">
