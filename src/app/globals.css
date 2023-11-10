@@ -14,3 +14,80 @@ body::-webkit-scrollbar {
     background-color: darkgrey;
     outline: 1px solid slategrey;
   }
+
+.shadow-custom{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      transition: all 200ms ease-in;
+}
+
+.transition-custom{
+  transition: all 200ms ease-in;
+}
+
+/* CSS */
+.button-custom {
+  all: unset;
+  width: 80px;
+  height: 20px;
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 12px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-custom::after,
+.button-custom::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button-custom::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #9a25b5;
+  border-radius: 10px;
+}
+
+.button-custom::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button-custom:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button-custom:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button-custom:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}

@@ -14,7 +14,7 @@ export default function ProductTile({ item }) {
         <img
           src={item.imageUrl}
           alt="product-image"
-          className="h-full w-full object-cover transition-all duration-300 group-hover:scale-125 border border-secondary rounded-md"
+          className="h-full w-full object-cover transition-custom group-hover:scale-125 border border-secondary rounded-md"
         />
       </div>
       {item.onSale === "yes" ? (
@@ -38,10 +38,12 @@ export default function ProductTile({ item }) {
             ).toFixed(2)}`}</p>
           ) : null}
         </div>
-          {item.onSale === "yes" ? (
-            <p className="text-xs font-semibold text-gray-600 -mt-1 mb-2">{`(${item.priceDrop}% off)`}</p>
-          ) : null}
-        <h3 className="mb-2 text-secondary text-md font-semibold">{item.name}</h3>
+        {item.onSale === "yes" ? (
+          <p className="text-xs font-semibold text-gray-600 -mt-1 mb-2">{`(${item.priceDrop}% off)`}</p>
+        ) : null}
+        <h3 className="mb-2 text-secondary text-md font-semibold">
+          {item.name}
+        </h3>
       </div>
     </div>
   );

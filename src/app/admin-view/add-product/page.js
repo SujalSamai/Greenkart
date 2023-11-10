@@ -151,7 +151,7 @@ export default function AdminAddNewProduct() {
           <p className="font-bold">Add image of your product below:</p>
           <label
             for="images"
-            className="flex gap-5 flex-col justify-center items-center h-56 p-6 border-2 border-dashed border-[#555] cursor-pointer rounded-lg transition-all duration-200 ease-in-out"
+            className="flex gap-5 flex-col justify-center items-center h-56 p-6 border-2 border-dashed border-[#555] cursor-pointer rounded-lg transition-custom"
             id="dropcontainer"
           >
             <span class="drop-title">Drop images here</span> or{" "}

@@ -29,7 +29,7 @@ function NavItems({ isModalView = false, router, isAdminView }) {
         {isAdminView
           ? adminNavOptions.map((item) => (
               <li
-                className="cursor-pointer block py-2 pl-3 pr-4 lowercase md:p-0 hover:text-[#adc3b6]"
+                className="cursor-pointer block py-2 pl-3 pr-4 lowercase md:p-0 hover:text-gray-300 hover:scale-105 transition-custom border-b border-black rounded-sm md:border-none my-2"
                 key={item.id}
                 onClick={() => {
                   router.push(item.path);
@@ -41,7 +41,7 @@ function NavItems({ isModalView = false, router, isAdminView }) {
             ))
           : navOptions.map((item) => (
               <li
-                className="cursor-pointer block py-2 pl-3 pr-4 lowercase md:p-0 hover:text-[#adc3b6] border-b border-black rounded-sm md:border-none my-2"
+                className="cursor-pointer block py-2 pl-3 pr-4 lowercase md:p-0 hover:text-gray-300 hover:scale-105 transition-custom border-b border-black rounded-sm md:border-none my-2"
                 key={item.id}
                 onClick={() => {
                   router.push(item.path);
@@ -129,7 +129,7 @@ export default function Navbar() {
                     title="Account"
                     src="https://img.icons8.com/3d-fluency/94/user-male-circle.png"
                     alt="user-male-circle"
-                    className="w-8 h-8 hover:scale-110 transition-all duration-200 ease-in m-1"
+                    className="w-8 h-8 hover:scale-110 transition-custom m-1"
                   />
                   <span className="text-xs hidden md:block">account</span>
                 </button>
@@ -144,7 +144,7 @@ export default function Navbar() {
                     title="Cart"
                     src="https://img.icons8.com/3d-fluency/94/shopping-cart-loaded.png"
                     alt="shopping-cart-loaded"
-                    className="w-8 h-8 hover:scale-110 transition-all duration-200 ease-in m-1"
+                    className="w-8 h-8 hover:scale-110 transition-custom m-1"
                   />
                   <span className="text-xs hidden md:block">cart</span>
                 </button>
@@ -164,7 +164,7 @@ export default function Navbar() {
                     title="Client View"
                     src="https://img.icons8.com/3d-fluency/94/change-user-male.png"
                     alt="change-user-male"
-                    className="w-8 h-8 hover:scale-110 transition-all duration-200 ease-in"
+                    className="w-8 h-8 hover:scale-110 transition-custom"
                   />
                   <span className="text-xs hidden md:block">client</span>
                 </button>
@@ -181,7 +181,7 @@ export default function Navbar() {
                     title="Admin View"
                     src="https://img.icons8.com/3d-fluency/94/user-shield.png"
                     alt="user-shield"
-                    className="w-8 h-8 hover:scale-110 transition-all duration-200 ease-in m-1"
+                    className="w-8 h-8 hover:scale-110 transition-custom m-1"
                   />
                   <span className="text-xs hidden md:block">admin</span>
                 </button>
@@ -191,12 +191,12 @@ export default function Navbar() {
               <button
                 onClick={handleLogout}
                 className={
-                  "md:mt-1.5 flex gap-1 md:border border-dashed rounded-full md:px-5 md:py-1 items-center shadow-lg hover:bg-primary hover:text-black transition-all duration-200 ease-in"
+                  "font-buttons flex items-center md:bg-red-600 md:pl-2 md:pr-4 md:py-2 text-sm rounded-md font-medium tracking-wide md:shadow-custom hover:bg-red-700 text-white hover:scale-105"
                 }
               >
                 <MdOutlinePowerSettingsNew
                   title="Log Out"
-                  className="w-8 h-8 md:w-5 md:h-6 text-red-600 m-1"
+                  className="w-8 h-8 md:w-5 md:h-5 m-1 text-red-600 md:text-white"
                 />
                 <span className="hidden md:block">Logout</span>
               </button>
@@ -204,10 +204,10 @@ export default function Navbar() {
               <button
                 onClick={handleLogin}
                 className={
-                  "md:mt-1.5 flex gap-1 border border-dashed rounded-full px-5 py-2 items-center shadow-lg hover:bg-primary hover:text-black transition-all duration-200 ease-in"
+                  "font-buttons flex items-center gap-1 bg-[#009197] px-4 py-3 text-sm rounded-md font-medium tracking-wide shadow-custom hover:bg-sky-700 text-white hover:scale-105"
                 }
               >
-                <HiUser className="w-5 h-6" />
+                <HiUser className="w-5 h-5" />
                 <span>Login</span>
               </button>
             )}

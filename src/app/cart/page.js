@@ -63,6 +63,7 @@ export default function Cart() {
       });
 
       extractAllCartItems();
+      window.location.reload();
     } else {
       toast.error(res.message, {
         position: toast.POSITION.TOP_RIGHT,
