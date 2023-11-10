@@ -114,7 +114,7 @@ export default function CartModal() {
                   <div className="flex flex-1 items-end justify-between text-sm">
                     <button
                       type="button"
-                      className="font-medium text-yellow-600 sm:order-2 rounded-md"
+                      className="font-medium text-yellow-600 sm:order-2 rounded-md hover:text-yellow-700 hover:scale-105 transition-custom"
                       onClick={() => handleDeleteCartItem(cartItem._id)}
                     >
                       {componentLoader &&
@@ -146,7 +146,7 @@ export default function CartModal() {
               router.push("/cart");
               setShowCartModal(false);
             }}
-            className="rounded-md mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide"
+            className="rounded-md mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-sm font-medium lowercase tracking-wide hover:bg-purple-500 transition-custom"
           >
             Go To Cart
           </button>
@@ -157,14 +157,14 @@ export default function CartModal() {
               setShowCartModal(false);
             }}
             type="button"
-            className="mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide disabled:opacity-50 disabled:cursor-not-allowed rounded-md"
+            className="mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-sm font-medium lowercase tracking-wide disabled:opacity-50 disabled:cursor-not-allowed rounded-md hover:bg-purple-500 transition-custom"
           >
             Checkout
           </button>
           <div className="mt-6 flex justify-center text-center text-sm text-gray-600 rounded-md">
             <button
               type="button"
-              className="font-medium text-grey"
+              className="font-medium text-grey hover:scale-105 transition-custom"
               onClick={() => {
                 router.push("/product/listing/all-products");
                 setShowCartModal(false);

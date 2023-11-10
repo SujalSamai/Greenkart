@@ -5,10 +5,15 @@ import Joi from "joi";
 import Product from "@/models/product";
 import AuthUser from "@/middleware/AuthUser";
 const AddNewProductSchema = Joi.object({
+  brand: Joi.string().required(),
   name: Joi.string().required(),
   price: Joi.number().required(),
   description: Joi.string().required(),
   category: Joi.string().required(),
+  manufactured: Joi.string().required(),
+  color: Joi.string().required(),
+  dimensions: Joi.string().required(),
+  availability: Joi.string().required(),
   sizes: Joi.array().required(),
   deliveryInfo: Joi.string().required(),
   onSale: Joi.string().required(),
@@ -24,22 +29,32 @@ export async function POST(req) {
     if (isAuthUser?.role === "admin") {
       const extractData = await req.json();
       const {
+        brand,
         name,
         description,
         price,
         imageUrl,
         category,
+        manufactured,
+        color,
+        dimensions,
+        availability,
         sizes,
         deliveryInfo,
         onSale,
         priceDrop,
       } = extractData;
       const { error } = AddNewProductSchema.validate({
+        brand,
         name,
         description,
         price,
         imageUrl,
         category,
+        manufactured,
+        color,
+        dimensions,
+        availability,
         sizes,
         deliveryInfo,
         onSale,

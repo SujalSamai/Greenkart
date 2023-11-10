@@ -42,17 +42,22 @@ export default function CommonCart({
                                   cartItem.productID &&
                                   cartItem.productID.name}
                               </p>
+                              <p className="text-sm font-semibold text-gray-900">
+                                {cartItem &&
+                                  cartItem.productID &&
+                                  cartItem.productID.brand}
+                              </p>
                             </div>
                             <div className="mt-4 flex gap-3 items-end justify-between sm:mt-0 sm:items-start sm:justify-end">
                               <p className="shrink-0 w-20 text-base font-semibold text-gray-950 sm:order-1 sm:ml-8 sm:text-right">
-                              ₹
+                                ₹
                                 {cartItem &&
                                   cartItem.productID &&
                                   cartItem.productID.price}
                               </p>
                               <button
                                 type="button"
-                                className="font-medium text-yellow-700 sm:order-2 rounded-md"
+                                className="font-medium text-yellow-700 sm:order-2 rounded-md hover:text-yellow-900 hover:scale-105 transition-custom"
                                 onClick={() =>
                                   handleDeleteCartItem(cartItem._id)
                                 }
@@ -86,7 +91,7 @@ export default function CommonCart({
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-gray-400">Subtotal</p>
                   <p className="text-lg text-secondary font-semibold">
-                  ₹
+                    ₹
                     {cartItems && cartItems.length
                       ? cartItems.reduce(
                           (total, item) => item.productID.price + total,
@@ -96,16 +101,16 @@ export default function CommonCart({
                   </p>
                 </div>
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-gray-400">Shipping</p>
-                  <p className="text-lg text-secondary font-semibold">₹0</p>
+                  <p className="text-sm text-gray-400">Delivery Charge</p>
+                  <p className="text-lg text-secondary font-semibold">₹40</p>
                 </div>
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-gray-400">Total</p>
                   <p className="text-lg text-secondary font-semibold">
-                  ₹
+                    ₹
                     {cartItems && cartItems.length
                       ? cartItems.reduce(
-                          (total, item) => item.productID.price + total,
+                          (total, item) => item.productID.price + total + 40,
                           0
                         )
                       : "0"}
@@ -115,7 +120,7 @@ export default function CommonCart({
                   <button
                     onClick={() => router.push("/checkout")}
                     disabled={cartItems && cartItems.length === 0}
-                    className="disabled:opacity-50 group inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide rounded-md"
+                    className="disabled:opacity-50 group inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium lowercase tracking-wide rounded-md hover:bg-purple-500 transition-custom"
                   >
                     Checkout
                   </button>

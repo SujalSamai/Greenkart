@@ -62,7 +62,7 @@ export default function ProductButtons({ item }) {
     <>
       <div className="p-2">
         <button
-          className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:text-[#adc3b6]"
+          className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:bg-purple-500 transition-custom"
           onClick={() => {
             setCurrentUpdatedProduct(item);
             router.push("/admin-view/add-product");
@@ -72,7 +72,7 @@ export default function ProductButtons({ item }) {
         </button>
         <button
           onClick={() => handleDeleteProduct(item)}
-          className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:text-[#adc3b6]"
+          className="mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:bg-red-500 transition-custom"
         >
           {componentLoader &&
           componentLoader.loading &&
@@ -92,7 +92,7 @@ export default function ProductButtons({ item }) {
     <>
       <button
         onClick={() => handleAddToCart(item)}
-        className="m-2 mt-1.5 flex w-11/12 justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:text-[#adc3b6]"
+        className="m-2 mt-1.5 flex w-11/12 justify-center bg-secondary px-5 py-3 text-xs font-medium uppercase tracking-wide text-white rounded-md hover:bg-purple-500 transition-custom"
       >
         {componentLoader &&
         componentLoader.loading &&

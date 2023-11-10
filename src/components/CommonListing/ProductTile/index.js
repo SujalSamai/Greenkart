@@ -17,33 +17,36 @@ export default function ProductTile({ item }) {
           className="h-full w-full object-cover transition-custom group-hover:scale-125 border border-secondary rounded-md"
         />
       </div>
+      <h3 className="my-1 mx-2 text-secondary text-lg font-semibold">
+        {item.name}
+      </h3>
+      <h3 className="mx-2 text-secondary/80 text-sm font-semibold">
+        {item.brand}
+      </h3>
       {item.onSale === "yes" ? (
-        <div className="absolute top-0 rounded-sm bg-secondary/90">
-          <p className="rounded-full p-1 text-10px font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">
+        <div className="absolute top-6 left-6 rounded-sm bg-secondary/90">
+          <p className="rounded-full p-1 text-xs font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">
             Sale
           </p>
         </div>
       ) : null}
-      <div className="my-2 mx-auto flex w-11/12 flex-col items-start justify-between">
-        <div className="mb-2 flex">
+      <div className="my-1 mx-auto flex w-11/12 flex-col items-start justify-between">
+        <div className="flex">
           <p
-            className={`mr-3 text-sm font-semibold ${
+            className={`mr-2 text-sm font-semibold ${
               item.onSale === "yes" ? "line-through" : ""
             }`}
           >{`₹ ${item.price}`}</p>
           {item.onSale === "yes" ? (
-            <p className="mr-2 text-sm font-bold text-red-700">{`₹ ${(
-              item.price -
-              item.price * (item.priceDrop / 100)
-            ).toFixed(2)}`}</p>
+            <div className="flex items-center">
+              <p className="mr-2 text-sm font-bold text-red-700">{`₹ ${(
+                item.price -
+                item.price * (item.priceDrop / 100)
+              ).toFixed(2)}`}</p>
+              <p className="text-xs font-semibold text-gray-600">{`(${item.priceDrop}% off)`}</p>
+            </div>
           ) : null}
         </div>
-        {item.onSale === "yes" ? (
-          <p className="text-xs font-semibold text-gray-600 -mt-1 mb-2">{`(${item.priceDrop}% off)`}</p>
-        ) : null}
-        <h3 className="mb-2 text-secondary text-md font-semibold">
-          {item.name}
-        </h3>
       </div>
     </div>
   );

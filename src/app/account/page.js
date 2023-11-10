@@ -131,15 +131,13 @@ export default function Account() {
               {/* we have render random user image here */}
             </div>
             <div className="flex flex-col flex-1">
-              <h4 className="text-lg font-semibold text-left">
-                {user?.name}
-              </h4>
+              <h4 className="text-lg font-semibold text-left">{user?.name}</h4>
               <p>{user?.email}</p>
               <p>{user?.role.replace(/\b\w/g, (s) => s.toUpperCase())}</p>
             </div>
             <button
               onClick={() => router.push(`/orders`)}
-              className="rounded-md mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide"
+              className="rounded-md mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide hover:bg-purple-500 transition-custom"
             >
               View Your Orders
             </button>
@@ -164,13 +162,13 @@ export default function Account() {
                         <p>Postal Code : {item.postalCode}</p>
                         <button
                           onClick={() => handleUpdateAddress(item)}
-                          className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
+                          className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md hover:bg-purple-500 transition-custom"
                         >
                           Update
                         </button>
                         <button
                           onClick={() => handleDelete(item._id)}
-                          className="mt-5  inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
+                          className="mt-5  inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md hover:bg-red-500 transition-custom"
                         >
                           {componentLoader &&
                           componentLoader.loading &&
@@ -189,7 +187,9 @@ export default function Account() {
                       </div>
                     ))
                   ) : (
-                    <p className="text-md text-secondary">No address found ! Please add a new address below.</p>
+                    <p className="text-md text-secondary">
+                      No address found ! Please add a new address below.
+                    </p>
                   )}
                 </div>
               )}
@@ -197,7 +197,7 @@ export default function Account() {
             <div className="mt-4">
               <button
                 onClick={() => setShowAddressForm(!showAddressForm)}
-                className="mt-5 rounded-md inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide"
+                className="mt-5 rounded-md inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide hover:bg-purple-500 transition-custom"
               >
                 {showAddressForm ? "Hide Address Form" : "Add New Address"}
               </button>

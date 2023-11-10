@@ -104,10 +104,17 @@ export const loginFormControls = [
 
 export const adminAddProductformControls = [
   {
+    id: "brand",
+    type: "text",
+    placeholder: "Enter Brand Name",
+    label: "Brand Name",
+    componentType: "input",
+  },
+  {
     id: "name",
     type: "text",
     placeholder: "Enter name",
-    label: "Name",
+    label: "Product Name",
     componentType: "input",
   },
   {
@@ -158,10 +165,40 @@ export const adminAddProductformControls = [
     ],
   },
   {
+    id: "manufactured",
+    type: "text",
+    placeholder:
+      "Manufactured using (For eg. HANDCRAFTED fabric and is made from waste plastic outside with cotton canvas fabric handles)",
+    label: "Product Details",
+    componentType: "input",
+  },
+  {
+    id: "color",
+    type: "text",
+    placeholder: "Enter Color of the product",
+    label: "Product color",
+    componentType: "input",
+  },
+  {
+    id: "dimensions",
+    type: "text",
+    placeholder:
+      "Enter Dimension of the product (l x b x h) (For eg.  11.5” x 15” x 5.5”)",
+    label: "Dimension",
+    componentType: "input",
+  },
+  {
+    id: "availability",
+    type: "text",
+    placeholder: "Enter Availabilty (For eg. In stock or Only 2 left!)",
+    label: "Available Items",
+    componentType: "input",
+  },
+  {
     id: "deliveryInfo",
     type: "text",
-    placeholder: "Enter Delivery info (Shipping)",
-    label: "Delivery Info",
+    placeholder: "Estimated Shipping Time (For eg. 2 days)",
+    label: "Shipping Time",
     componentType: "input",
   },
   {
@@ -185,11 +222,10 @@ export const adminAddProductformControls = [
     id: "priceDrop",
     type: "number",
     placeholder: "Enter Price Drop",
-    label: "Price Drop",
+    label: "Price Drop (in Percentage)",
     componentType: "input",
   },
 ];
-
 
 export const firebaseConfig = {
   apiKey: process.env.API_KEY,

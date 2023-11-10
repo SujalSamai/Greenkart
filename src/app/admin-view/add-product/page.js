@@ -154,14 +154,15 @@ export default function AdminAddNewProduct() {
             className="flex gap-5 flex-col justify-center items-center h-56 p-6 border-2 border-dashed border-[#555] cursor-pointer rounded-lg transition-custom"
             id="dropcontainer"
           >
-            <span class="drop-title">Drop images here</span> or{" "}
+            <span class="drop-title">Drop image here</span> or{" "}
             <input
               accept="image/*"
               alt="product-image"
               max="1000000"
               type="file"
               onChange={handleImage}
-              className="flex file:ml-12 file:bg-secondary file:text-primary file:p-2 file:rounded-lg rounded-lg border border-secondary p-2 cursor-pointer file:cursor-pointer file:mr-8 file:text-sm"
+              className="flex file:ml-2 file:bg-secondary file:text-primary file:p-2 file:rounded-lg rounded-lg border border-secondary 
+              p-2 cursor-pointer file:cursor-pointer file:mr-12 file:text-sm"
               required
             />
           </label>

@@ -36,49 +36,28 @@ export default function CommonDetails({ item }) {
   return (
     <section className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto px-4">
-        <div className="lg:col-gap-12 xl:col-gap-16 mt-8 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
+        <div className="lg:col-gap-12 xl:col-gap-16 mt-8 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16 py-20 md:py-10">
           <div className="lg:col-span-3 lg:row-end-1">
             <div className="lg:flex lg:items-start">
               <div className="lg:order-2 lg:ml-5">
-                <div className="max-w-xl overflow-hidden rounded-md">
+                <div className="max-w-xl max-h-[40rem] overflow-hidden rounded-md">
                   <img
                     src={item.imageUrl}
-                    className="h-full w-full max-w-full object-cover"
+                    className="h-full w-full max-w-full object-cover hover:scale-110 transition-custom"
                     alt="Product Details"
                   />
-                </div>
-              </div>
-              <div className="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
-                <div className="flex flex-row items-start lg:flex-col">
-                  <button
-                    type="button"
-                    className="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-md border-2 border-gray-100 text-center"
-                  >
-                    <img
-                      src={item.imageUrl}
-                      className="h-full w-full object-cover"
-                      alt="Product Details"
-                    />
-                  </button>
-                  <button
-                    type="button"
-                    className="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-md border-2 border-gray-100 text-center"
-                  >
-                    <img
-                      src={item.imageUrl}
-                      className="h-full w-full object-cover"
-                      alt="Product Details"
-                    />
-                  </button>
                 </div>
               </div>
             </div>
           </div>
           <div className="lg:col-span-2 lg:row-span-2 lg:row-end-2">
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-4xl font-bold text-gray-900 font-heading">
               {item && item.name}
             </h1>
-            <div className="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
+            <h3 className="text-xl font-bold text-gray-600 font-heading">
+              {item && item.brand}
+            </h3>
+            <div className="mt-10 flex flex-col items-start justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
               <div className="flex items-end">
                 <h1
                   className={`mr-3 text-3xl font-bold ${
@@ -95,7 +74,7 @@ export default function CommonDetails({ item }) {
                 ) : null}
               </div>
               <button
-                className="rounded-md mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium tracking-wide uppercase text-white"
+                className="rounded-md mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium tracking-wide lowercase text-white hover:bg-purple-500 transition-custom"
                 type="button"
                 onClick={() => handleAddToCart(item)}
               >
@@ -110,28 +89,29 @@ export default function CommonDetails({ item }) {
                 )}
               </button>
             </div>
+
+            <div className="mt-8 flow-root sm:mt-12 mb-8 text-gray-700 tracking-wide font-buttons">
+              {item && item.description}
+            </div>
             <ul className="mt-8 space-y-2">
-              <li className="flex items-center text-left text-sm font-medium text-gray-600">
-                {item && item.deliveryInfo}
+              <li className="flex gap-1 items-center text-left text-sm font-medium text-gray-600">
+                <strong>Color:</strong> {item && item.color}
               </li>
-              <li className="flex items-center text-left text-sm font-medium text-gray-600">
-                {"Cancel anytime"}
+              <li className="flex gap-1 items-center text-left text-sm font-medium text-gray-600">
+                <strong>Dimensions:</strong> {item && item.dimensions}
+              </li>
+              <li className="flex gap-1 items-center text-left text-sm font-medium text-gray-600">
+                <strong>Shipping Time:</strong> {item && item.deliveryInfo}
+              </li>
+              <li className="flex flex-col gap-1 text-left text-sm font-medium text-gray-600">
+                <span className="font-bold">Product Details:</span>
+                <p>{item && item.manufactured}</p>
               </li>
             </ul>
-            <div className="lg:col-span-3">
-              <div className="border-b border-gray-400">
-                <nav className="flex gap-4">
-                  <a
-                    href="#"
-                    className="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900"
-                  >
-                    Description
-                  </a>
-                </nav>
-              </div>
-              <div className="mt-8 flow-root sm:mt-12 mb-8">
-                {item && item.description}
-              </div>
+            <div className="mt-10">
+              <p className="font-bold text-red-500">
+                {item && item.availability}
+              </p>
             </div>
           </div>
         </div>
