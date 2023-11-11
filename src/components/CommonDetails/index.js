@@ -74,7 +74,7 @@ export default function CommonDetails({ item }) {
                 ) : null}
               </div>
               <button
-                className="rounded-md mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium tracking-wide lowercase text-white hover:bg-purple-500 transition-custom"
+                className="rounded-md mt-1.5 inline-block bg-secondary px-5 py-3 text-xs font-medium tracking-wide lowercase text-white hover:bg-hover transition-custom"
                 type="button"
                 onClick={() => handleAddToCart(item)}
               >

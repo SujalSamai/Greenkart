@@ -17,7 +17,7 @@ export default function ShopByCategory() {
               <h3 className="text-xl font-medium text-white">Home & Kitchen</h3>
               <button
                 onClick={() => router.push("/product/listing/kitchen")}
-                className="mt-1.5 inline-block lowercase bg-secondary px-5 py-3 text-xs rounded-md font-medium tracking-wide text-white shadow-custom hover:bg-purple-600 hover:scale-105"
+                className="mt-1.5 inline-block lowercase bg-secondary px-5 py-3 text-xs rounded-md font-medium tracking-wide text-white shadow-custom hover:bg-hover hover:scale-105"
               >
                 Shop Now
               </button>
@@ -34,7 +34,7 @@ export default function ShopByCategory() {
               <h3 className="text-xl font-medium text-white">Bags</h3>
               <button
                 onClick={() => router.push("/product/listing/bags")}
-                className="mt-1.5 inline-block bg-secondary px-5 py-3 text-xs rounded-md font-medium lowercase tracking-wide text-white backdrop-brightness-50 shadow-custom hover:bg-purple-600 hover:scale-105"
+                className="mt-1.5 inline-block bg-secondary px-5 py-3 text-xs rounded-md font-medium lowercase tracking-wide text-white backdrop-brightness-50 shadow-custom hover:bg-hover hover:scale-105"
               >
                 Shop Now
               </button>
@@ -51,7 +51,7 @@ export default function ShopByCategory() {
               <h3 className="text-xl font-medium text-white">Fashion</h3>
               <button
                 onClick={() => router.push("/product/listing/fashion")}
-                className="mt-1.5 inline-block bg-secondary px-5 py-3 text-xs rounded-md font-medium lowercase tracking-wide text-white shadow-custom hover:bg-purple-600 hover:scale-105"
+                className="mt-1.5 inline-block bg-secondary px-5 py-3 text-xs rounded-md font-medium lowercase tracking-wide text-white shadow-custom hover:bg-hover hover:scale-105"
               >
                 Shop Now
               </button>

@@ -146,7 +146,7 @@ export default function CartModal() {
               router.push("/cart");
               setShowCartModal(false);
             }}
-            className="rounded-md mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-sm font-medium lowercase tracking-wide hover:bg-purple-500 transition-custom"
+            className="rounded-md mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-sm font-medium lowercase tracking-wide hover:bg-hover transition-custom"
           >
             Go To Cart
           </button>
@@ -157,7 +157,7 @@ export default function CartModal() {
               setShowCartModal(false);
             }}
             type="button"
-            className="mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-sm font-medium lowercase tracking-wide disabled:opacity-50 disabled:cursor-not-allowed rounded-md hover:bg-purple-500 transition-custom"
+            className="mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-sm font-medium lowercase tracking-wide disabled:opacity-50 disabled:cursor-not-allowed rounded-md hover:bg-hover transition-custom"
           >
             Checkout
           </button>

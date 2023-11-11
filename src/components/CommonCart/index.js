@@ -102,7 +102,9 @@ export default function CommonCart({
                 </div>
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-gray-400">Delivery Charge</p>
-                  <p className="text-lg text-secondary font-semibold">₹40</p>
+                  <p className="text-lg text-secondary font-semibold">
+                    {cartItems && cartItems.length ? "₹40" : "₹0"}
+                  </p>
                 </div>
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-gray-400">Total</p>
@@ -120,7 +122,7 @@ export default function CommonCart({
                   <button
                     onClick={() => router.push("/checkout")}
                     disabled={cartItems && cartItems.length === 0}
-                    className="disabled:opacity-50 group inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium lowercase tracking-wide rounded-md hover:bg-purple-500 transition-custom"
+                    className="disabled:opacity-50 group inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium lowercase tracking-wide rounded-md hover:bg-hover transition-custom"
                   >
                     Checkout
                   </button>

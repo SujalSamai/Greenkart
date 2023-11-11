@@ -137,7 +137,7 @@ export default function Account() {
             </div>
             <button
               onClick={() => router.push(`/orders`)}
-              className="rounded-md mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide hover:bg-purple-500 transition-custom"
+              className="rounded-md mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide hover:bg-hover transition-custom"
             >
               View Your Orders
             </button>
@@ -162,7 +162,7 @@ export default function Account() {
                         <p>Postal Code : {item.postalCode}</p>
                         <button
                           onClick={() => handleUpdateAddress(item)}
-                          className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md hover:bg-purple-500 transition-custom"
+                          className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md hover:bg-hover transition-custom"
                         >
                           Update
                         </button>
@@ -197,7 +197,7 @@ export default function Account() {
             <div className="mt-4">
               <button
                 onClick={() => setShowAddressForm(!showAddressForm)}
-                className="mt-5 rounded-md inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide hover:bg-purple-500 transition-custom"
+                className="mt-5 rounded-md inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide hover:bg-hover transition-custom"
               >
                 {showAddressForm ? "Hide Address Form" : "Add New Address"}
               </button>

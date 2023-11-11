@@ -53,7 +53,7 @@ export default function Home() {
             <button
               type="button"
               onClick={() => router.push("/product/listing/all-products")}
-              className="font-buttons mt-1.5 inline-block bg-secondary px-5 py-3 text-sm rounded-md lowercase font-medium tracking-wide text-white shadow-custom hover:bg-purple-600 hover:scale-105"
+              className="font-buttons mt-1.5 inline-block bg-secondary px-5 py-3 text-sm rounded-md lowercase font-medium tracking-wide text-white shadow-custom hover:bg-hover hover:scale-105"
             >
               Explore Shop Collection
             </button>
@@ -72,7 +72,7 @@ export default function Home() {
                 </h2>
                 <button
                   onClick={() => router.push("/product/listing/all-products")}
-                  className="mt-8 w-full md:w-9/12 inline-block bg-secondary px-5 py-3 text-xs rounded-md font-medium lowercase tracking-wide text-white shadow-custom hover:bg-purple-600 hover:scale-105"
+                  className="mt-8 w-full md:w-9/12 inline-block bg-secondary px-5 py-3 text-xs rounded-md font-medium lowercase tracking-wide text-white shadow-custom hover:bg-hover hover:scale-105"
                 >
                   Shop ALL
                 </button>
@@ -103,8 +103,11 @@ export default function Home() {
                             <h3 className="font-medium text-gray-900">
                               {productItem.name}
                             </h3>
+                            <h3 className="font-medium text-gray-900">
+                              {productItem.brand}
+                            </h3>
                             <p className="mt-1 text-sm text-gray-800">
-                              ${productItem.price}{" "}
+                              ₹{productItem.price}{" "}
                               <span className="text-red-700">{`(-${productItem.priceDrop}%) Off`}</span>
                             </p>
                           </div>

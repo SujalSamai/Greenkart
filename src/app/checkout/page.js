@@ -214,7 +214,7 @@ export default function Checkout() {
             )}
           </div>
         </div>
-        <div className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
+        <div className="w-11/12 mx-auto mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
           <p className="text-xl font-medium">Shipping Address Details</p>
           <p className="text-gray-500">
             Complete your order by selecting address below
@@ -229,10 +229,10 @@ export default function Checkout() {
                   }`}
                 >
                   <p>Name : {address.fullName}</p>
-                  <p>Address : {address.address}</p>
-                  <p>City : {address.city}</p>
-                  <p>Country : {address.country}</p>
-                  <p>PostalCode : {address.postalCode}</p>
+                  <p>
+                    Address : {address.address}, {address.city},{" "}
+                    {address.country} ({address.postalCode})
+                  </p>
                   <button
                     className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
                     onClick={() => handleSelectedAddress(address)}
@@ -272,7 +272,11 @@ export default function Checkout() {
             </div>
             <div className="flex items-center justify-between">
               <p className="text-sm font-medium text-gray-900">Shipping</p>
-              <p className="text-lg font-bold text-gray-900">Free</p>
+              <p className="text-lg font-bold text-gray-900">
+                {cartItems && cartItems.length
+                  ? `₹40 x ${cartItems.length}`
+                  : "Free"}
+              </p>
             </div>
             <div className="flex items-center justify-between">
               <p className="text-sm font-medium text-gray-900">Total</p>
@@ -280,7 +284,7 @@ export default function Checkout() {
                 ₹
                 {cartItems && cartItems.length
                   ? cartItems.reduce(
-                      (total, item) => item.productID.price + total,
+                      (total, item) => item.productID.price + total + 40,
                       0
                     )
                   : "0"}
