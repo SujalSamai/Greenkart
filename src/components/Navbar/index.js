@@ -101,7 +101,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-secondary/90 text-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 font-para shadow-lg">
-        <div className="max-w-screen-xl flex items-center justify-between mx-auto">
+        <div className="px-4 flex items-center justify-between mx-auto">
           <div
             onClick={() => router.push("/")}
             className="flex items-center cursor-pointer"

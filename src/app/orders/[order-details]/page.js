@@ -59,9 +59,9 @@ export default function OrderDetails() {
             orderDetails.createdAt.split("T")[1].split(".")[0]}
         </p>
       </div>
-      <div className="mt-10 flex flex-col justify-center xl:flex-row items-stretch w-ful xl:space-x-8 md:space-y-6 xl:space-y-0">
-        <div className="flex flex-col justify-center items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
-          <div className="flex flex-col justify-start item-start bg-green-50 px-4 py-4 md:p-6 xl:p-8 w-full">
+      <div className="mt-10 flex flex-col justify-center xl:flex-row items-stretch w-ful xl:space-x-8 md:space-y-6 xl:space-y-0 ">
+        <div className="flex flex-col justify-center items-start w-full space-y-4 md:space-y-6 xl:space-y-8 ">
+          <div className="flex flex-col justify-start item-start bg-green-50 px-4 py-4 md:p-6 xl:p-8 w-full shadow-custom">
             <p className="font-bold text-lg">Your order summary </p>
             {orderDetails &&
             orderDetails.orderItems &&
@@ -88,29 +88,41 @@ export default function OrderDetails() {
                           ₹{item && item.product && item.product.price}
                         </h3>
                       </div>
+                      <div className="w-full flex justify-between items-start space-x-8">
+                        <h3 className="text-xl font-semibold leading-6 text-gray-900">
+                          Quantity: {item && item.qty && item.qty}
+                        </h3>
+                      </div>
                     </div>
                   </div>
                 ))
               : null}
           </div>
-          <div className="flex justify-center flex-col md:flex-row items-stretch w-full space-y-4 md:space-y-0 md:space-x-5 xl:space-x-8">
+          <div className="flex justify-center flex-col md:flex-row items-stretch w-full space-y-4 md:space-y-0 md:space-x-5 xl:space-x-8 shadow-custom">
             <div className="flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 space-y-6">
               <h3 className="text-xl font-semibold leading-6 text-gray-900">
                 Summary
               </h3>
               <div className="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
                 <div className="flex justify-between w-full">
-                  <p className="text-base leading-5 text-gray-800">Subtotal</p>
+                  <p className="text-base leading-5 text-gray-800">Total</p>
                   <p className="text-base leading-5 text-gray-900">
-                    ₹{orderDetails && orderDetails.totalPrice}
+                    ₹
+                    {orderDetails &&
+                      orderDetails.totalPrice -
+                        orderDetails.orderItems.length * 40}
                   </p>
                 </div>
                 <div className="flex justify-between w-full">
                   <p className="text-base leading-5 text-gray-800">Shipping</p>
-                  <p className="text-base leading-5 text-gray-900">Free</p>
+                  <p className="text-base leading-5 text-gray-900">
+                    {orderDetails
+                      ? `₹40 x ${orderDetails.orderItems.length}`
+                      : "Free"}
+                  </p>
                 </div>
                 <div className="flex justify-between w-full">
-                  <p className="text-base leading-5 text-gray-800">Subtotal</p>
+                  <p className="text-base leading-5 text-gray-800">Total</p>
                   <p className="text-base leading-5 text-gray-900">
                     ₹{orderDetails && orderDetails.totalPrice}
                   </p>
@@ -120,7 +132,7 @@ export default function OrderDetails() {
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          <div className="bg-gray-50 w-full xl:w-96 flex items-start px-4 py-6 flex-col">
+          <div className="bg-gray-50 w-full xl:w-96 flex items-start px-4 py-6 flex-col shadow-custom">
             <h3 className="text-xl font-semibold leading-6 text-gray-900">
               Customer details
             </h3>
@@ -135,7 +147,7 @@ export default function OrderDetails() {
               </div>
             </div>
           </div>
-          <div className="flex justify-between xl:h-full items-stretch w-full flex-col mt-6 md:mt-0 bg-white">
+          <div className="flex justify-between xl:h-full items-stretch w-full flex-col mt-6 md:mt-0 bg-white shadow-custom">
             <div className="flex justify-center md:justify-start xl:flex-col flex-col md:space-x-6 lg:space-x-8 xl:spce-x-0 space-y-4 md:space-y-0 xl:space-y-12 md:flex-row item-center md:items-start">
               <div className="flex justify-start items-start flex-col space-y-4 px-4 py-6 font-semibold">
                 <h3 className="text-xl leading-6 text-gray-900">
@@ -161,7 +173,7 @@ export default function OrderDetails() {
           </div>
           <button
             onClick={() => router.push(`/product/listing/all-products`)}
-            className=" mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
+            className=" mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide rounded-md"
           >
             Shop Again
           </button>

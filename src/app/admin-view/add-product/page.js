@@ -8,6 +8,7 @@ import Notification from "@/components/Notification";
 import { GlobalContext } from "@/context";
 import { addNewProduct, updateAProduct } from "@/services/product";
 import {
+  AvailableSizes,
   adminAddProductformControls,
   firebaseConfig,
   firebaseStroageURL,
@@ -59,15 +60,16 @@ async function helperForUploadingImageToFirebase(file) {
 }
 
 const initialFormData = {
+  brand: "",
   name: "",
   price: 0,
   description: "",
   category: "all",
-  sizes: [],
   deliveryInfo: "",
   onSale: "no",
   priceDrop: 0,
   imageUrl: "",
+  sizes: [],
 };
 
 export default function AdminAddNewProduct() {
@@ -194,8 +196,16 @@ export default function AdminAddNewProduct() {
               />
             ) : null
           )}
+          <div className="flex gap-2 flex-col">
+            <label>Available sizes (for clothing)</label>
+            <TileComponent
+              selected={formData.sizes}
+              onClick={handleTileClick}
+              data={AvailableSizes}
+            />
+          </div>
           <button
-            className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium uppercase tracking-wide rounded-md hover:text-[#adc3b6]"
+            className="inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium tracking-wide rounded-md hover:text-[#adc3b6]"
             onClick={handleAddProduct}
           >
             {componentLoader && componentLoader.loading ? (

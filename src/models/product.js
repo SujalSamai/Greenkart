@@ -15,6 +15,8 @@ const ProductSchema = new mongoose.Schema(
     onSale: String,
     priceDrop: Number,
     imageUrl: String,
+    sizes: Array,
+    skinType: String,
   },
   { timestamps: true }
 );

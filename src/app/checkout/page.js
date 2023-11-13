@@ -61,12 +61,12 @@ export default function Checkout() {
           user: user?._id,
           shippingAddress: getCheckOutFormData.shippingAddress,
           orderItems: cartItems.map((item) => ({
-            qty: 1,
+            qty: item.quantity,
             product: item.productID,
           })),
           paymentMethod: "Stripe",
           totalPrice: cartItems.reduce(
-            (total, item) => item.productID.price + total,
+            (total, item) => item.productID.price * item.quantity + total + 40,
             0
           ),
           isPaid: true,
@@ -125,7 +125,7 @@ export default function Checkout() {
           images: [item.productID.imageUrl],
           name: item.productID.name,
         },
-        unit_amount: item.productID.price * 100,
+        unit_amount: item.productID.price * item.quantity * 100 + 40 * 100,
       },
       quantity: 1,
     }));
@@ -204,7 +204,10 @@ export default function Checkout() {
                       {item && item.productID && item.productID.name}
                     </span>
                     <span className="font-semibold">
-                      ₹{item && item.productID && item.productID.price}
+                      ₹
+                      {item &&
+                        item.productID &&
+                        item.productID.price * item.quantity}
                     </span>
                   </div>
                 </div>
@@ -234,7 +237,7 @@ export default function Checkout() {
                     {address.country} ({address.postalCode})
                   </p>
                   <button
-                    className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
+                    className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide rounded-md"
                     onClick={() => handleSelectedAddress(address)}
                   >
                     {address._id === selectedAddress
@@ -253,7 +256,7 @@ export default function Checkout() {
             onClick={() => {
               router.push("/account");
             }}
-            className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
+            className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide rounded-md"
           >
             Add new Address
           </button>
@@ -264,7 +267,8 @@ export default function Checkout() {
                 ₹
                 {cartItems && cartItems.length
                   ? cartItems.reduce(
-                      (total, item) => item.productID.price + total,
+                      (total, item) =>
+                        item.productID.price * item.quantity + total,
                       0
                     )
                   : "0"}
@@ -284,7 +288,8 @@ export default function Checkout() {
                 ₹
                 {cartItems && cartItems.length
                   ? cartItems.reduce(
-                      (total, item) => item.productID.price + total + 40,
+                      (total, item) =>
+                        item.productID.price * item.quantity + total + 40,
                       0
                     )
                   : "0"}
@@ -297,7 +302,7 @@ export default function Checkout() {
                   Object.keys(checkoutFormData.shippingAddress).length === 0
                 }
                 onClick={handleCheckout}
-                className="disabled:opacity-50 disabled:cursor-not-allowed w-full mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md"
+                className="disabled:opacity-50 disabled:cursor-not-allowed w-full mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide rounded-md"
               >
                 Checkout
               </button>

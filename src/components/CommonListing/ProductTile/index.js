@@ -10,11 +10,11 @@ export default function ProductTile({ item }) {
         router.push(`/product/${item._id}`);
       }}
     >
-      <div className="overflow-hidden aspect-w-1 aspect-h-1 h-40 md:h-64">
+      <div className="overflow-hidden aspect-w-1 aspect-h-1 h-44 md:h-64">
         <img
           src={item.imageUrl}
           alt="product-image"
-          className="h-full w-full object-cover transition-custom group-hover:scale-125 border border-secondary rounded-md"
+          className="h-full w-full object-cover transition-custom group-hover:scale-125 border border-dashed border-secondary rounded-md"
         />
       </div>
       <h3 className="my-1 mx-1 min-w-[6rem] h-7 text-secondary text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">
@@ -25,7 +25,7 @@ export default function ProductTile({ item }) {
       </p>
       {item.onSale === "yes" ? (
         <div className="absolute top-6 left-6 rounded-sm bg-secondary/90">
-          <p className="rounded-full p-1 text-xs font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">
+          <p className="rounded-full p-1 text-xs font-bold tracking-wide text-white sm:py-1 sm:px-3">
             Sale
           </p>
         </div>

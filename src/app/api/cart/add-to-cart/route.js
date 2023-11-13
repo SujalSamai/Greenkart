@@ -7,6 +7,7 @@ import { NextResponse } from "next/server";
 const AddToCart = Joi.object({
   userID: Joi.string().required(),
   productID: Joi.string().required(),
+  quantity: Joi.number().required(),
 });
 
 export const dynamic = "force-dynamic";
@@ -17,9 +18,9 @@ export async function POST(req) {
     const isAuthUser = await AuthUser(req);
     if (isAuthUser) {
       const data = await req.json();
-      const { productID, userID } = data;
+      const { productID, userID, quantity } = data;
 
-      const { error } = AddToCart.validate({ userID, productID });
+      const { error } = AddToCart.validate({ userID, productID, quantity });
       if (error) {
         return NextResponse.json({
           success: false,

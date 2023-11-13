@@ -71,7 +71,6 @@ export default function CartModal() {
       setComponentLoader({ loading: false, id: getCartItemID });
     }
   }
-
   return (
     <CommonModal
       showButtons={true}
@@ -95,21 +94,22 @@ export default function CartModal() {
                 </div>
                 <div className="ml-4 flex flex-1 flex-col">
                   <div>
-                    <div className="text-sm">
-                      <h3>
-                        <a>
-                          {cartItem &&
-                            cartItem.productID &&
-                            cartItem.productID.name}
-                        </a>
-                      </h3>
-                    </div>
-                    <p className="mt-1 text-xs text-gray-600">
-                      ₹
+                    <h3 className="text-sm">
                       {cartItem &&
                         cartItem.productID &&
-                        cartItem.productID.price}
-                    </p>
+                        cartItem.productID.name}
+                    </h3>
+                    <div className="flex items-center gap-4">
+                      <p className="mt-1 text-xs text-gray-600">
+                        ₹
+                        {cartItem &&
+                          cartItem.productID &&
+                          cartItem.productID.price}
+                      </p>
+                      <p className="mt-1 text-xs text-gray-600">
+                        Quantity: {cartItem && cartItem.quantity}
+                      </p>
+                    </div>
                   </div>
                   <div className="flex flex-1 items-end justify-between text-sm">
                     <button
@@ -146,7 +146,7 @@ export default function CartModal() {
               router.push("/cart");
               setShowCartModal(false);
             }}
-            className="rounded-md mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-sm font-medium lowercase tracking-wide hover:bg-hover transition-custom"
+            className="rounded-md mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-sm font-medium tracking-wide hover:bg-hover transition-custom"
           >
             Go To Cart
           </button>
@@ -157,7 +157,7 @@ export default function CartModal() {
               setShowCartModal(false);
             }}
             type="button"
-            className="mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-sm font-medium lowercase tracking-wide disabled:opacity-50 disabled:cursor-not-allowed rounded-md hover:bg-hover transition-custom"
+            className="mt-1.5 w-full inline-block bg-secondary text-white px-5 py-3 text-sm font-medium  tracking-wide disabled:opacity-50 disabled:cursor-not-allowed rounded-md hover:bg-hover transition-custom"
           >
             Checkout
           </button>

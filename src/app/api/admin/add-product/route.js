@@ -11,14 +11,16 @@ const AddNewProductSchema = Joi.object({
   description: Joi.string().required(),
   category: Joi.string().required(),
   manufactured: Joi.string().required(),
-  color: Joi.string().required(),
-  dimensions: Joi.string().required(),
+  color: Joi.string(),
+  dimensions: Joi.string(),
   availability: Joi.string().required(),
   sizes: Joi.array().required(),
   deliveryInfo: Joi.string().required(),
   onSale: Joi.string().required(),
   priceDrop: Joi.number().required(),
   imageUrl: Joi.string().required(),
+  sizes: Joi.array(),
+  skinType: Joi.string(),
 });
 export const dynamic = "force-dynamic";
 
@@ -43,6 +45,7 @@ export async function POST(req) {
         deliveryInfo,
         onSale,
         priceDrop,
+        skinType,
       } = extractData;
       const { error } = AddNewProductSchema.validate({
         brand,
@@ -59,6 +62,7 @@ export async function POST(req) {
         deliveryInfo,
         onSale,
         priceDrop,
+        skinType,
       });
       if (error) {
         console.log(error);

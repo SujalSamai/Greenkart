@@ -5,6 +5,7 @@ import { GlobalContext } from "@/context";
 import { getAllOrdersForAllUsers, updateStatusOfOrder } from "@/services/order";
 import { useContext, useEffect } from "react";
 import { PulseLoader } from "react-spinners";
+import { GiCardboardBoxClosed } from "react-icons/gi";
 
 export default function AdminView() {
   const {
@@ -76,14 +77,35 @@ export default function AdminView() {
                   {allOrdersForAllUsers.map((item) => (
                     <li
                       key={item._id}
-                      className="bg-coolmint p-5 flex flex-col space-y-3 py-6 text-left my-2 shadow-lg shadow-secondary/30"
+                      className="bg-coolmint p-5 flex flex-col py-6 text-left shadow-custom shadow-secondary/30 bg-white"
                     >
-                      <div className="flex flex-col md:flex-row">
-                        <h1 className="font-bold text-lg mb-3 flex-1 border-b border-black">
-                          OrderID: #{item._id}
-                        </h1>
-                        <div className="flex flex-col gap-2">
-                          <div className="flex items-center my-0.5">
+                      <div className="flex flex-col md:flex-row gap-2 md:items-center">
+                        <GiCardboardBoxClosed className="h-10 w-10" />
+                        <div className="flex-1">
+                          <h1 className="font-bold text-lg">
+                            OrderID: #{item._id}
+                          </h1>
+                          <p className="text-sm text-gray-600">
+                            Ordered on:{" "}
+                            {item &&
+                              item.createdAt &&
+                              item.createdAt.split("T")[0]}{" "}
+                          </p>
+                          <p
+                            className={`${
+                              item.isProcessing
+                                ? "text-red-500"
+                                : "text-secondary"
+                            } font-bold text-sm`}
+                          >
+                            {item.isProcessing
+                              ? "Order is Processing..."
+                              : "Order is delivered!!"}
+                          </p>
+                          <hr className="w-full h-1 bg-gray-800 rounded md:hidden my-2"></hr>
+                        </div>
+                        <div className="flex flex-col md:gap-2">
+                          <div className="flex items-center md:my-0.5">
                             <p className="mr-1 text-sm font-medium text-gray-900">
                               User Name :
                             </p>
@@ -91,7 +113,7 @@ export default function AdminView() {
                               {item?.user?.name}
                             </p>
                           </div>
-                          <div className="flex items-center my-0.5">
+                          <div className="flex items-center md:my-0.5">
                             <p className="mr-1 text-sm font-medium text-gray-900">
                               Email :
                             </p>
@@ -109,7 +131,7 @@ export default function AdminView() {
                           </div>
                         </div>
                       </div>
-                      <div className="flex gap-2">
+                      <div className="flex gap-2 bg-primary p-4 mt-2">
                         {item.orderItems.map((orderItem, index) => (
                           <div key={index} className="shrink-0">
                             <img
@@ -124,16 +146,12 @@ export default function AdminView() {
                           </div>
                         ))}
                       </div>
-                      <div className="flex gap-5">
-                        <button className="disabled:opacity-50 mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md">
-                          {item.isProcessing
-                            ? "Order is Processing"
-                            : "Order is delivered"}
-                        </button>
+                      <div className="flex justify-between items-center gap-5 bg-primary px-5 pb-5 ">
+                        <hr class="w-9/12 h-1 bg-gray-800 border-0 rounded mt-4 hidden md:block"></hr>
                         <button
                           onClick={() => handleOrderUpdateStatus(item)}
                           disabled={!item.isProcessing}
-                          className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:bg-hover transition-custom"
                         >
                           {componentLoader &&
                           componentLoader.loading &&

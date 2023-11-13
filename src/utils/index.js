@@ -176,7 +176,7 @@ export const adminAddProductformControls = [
     id: "color",
     type: "text",
     placeholder: "Enter Color of the product",
-    label: "Product color",
+    label: "Product color (optional)",
     componentType: "input",
   },
   {
@@ -184,14 +184,21 @@ export const adminAddProductformControls = [
     type: "text",
     placeholder:
       "Enter Dimension of the product (l x b x h) (For eg.  11.5” x 15” x 5.5”)",
-    label: "Dimension",
+    label: "Dimension (optional)",
+    componentType: "input",
+  },
+  {
+    id: "skinType",
+    type: "text",
+    placeholder: "Enter the skin type suitable for the cosmetic.",
+    label: "Skin Type (optional)",
     componentType: "input",
   },
   {
     id: "availability",
     type: "text",
     placeholder: "Enter Availabilty (For eg. In stock or Only 2 left!)",
-    label: "Available Items",
+    label: "Items Availability",
     componentType: "input",
   },
   {
@@ -224,6 +231,25 @@ export const adminAddProductformControls = [
     placeholder: "Enter Price Drop",
     label: "Price Drop (in Percentage)",
     componentType: "input",
+  },
+];
+
+export const AvailableSizes = [
+  {
+    id: "s",
+    label: "S",
+  },
+  {
+    id: "m",
+    label: "M",
+  },
+  {
+    id: "l",
+    label: "L",
+  },
+  {
+    id: "xl",
+    label: "XL",
   },
 ];
 

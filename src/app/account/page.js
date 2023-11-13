@@ -137,7 +137,7 @@ export default function Account() {
             </div>
             <button
               onClick={() => router.push(`/orders`)}
-              className="rounded-md mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide hover:bg-hover transition-custom"
+              className="rounded-md mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide hover:bg-hover transition-custom"
             >
               View Your Orders
             </button>
@@ -151,10 +151,13 @@ export default function Account() {
                   data-testid="loader"
                 />
               ) : (
-                <div className="mt-4 flex flex-col gap-4">
+                <div className="mt-4 flex flex-col gap-4 ">
                   {addresses && addresses.length ? (
                     addresses.map((item) => (
-                      <div className="border p-6" key={item._id}>
+                      <div
+                        className="border p-6 bg-primary shadow-custom"
+                        key={item._id}
+                      >
                         <p>Name : {item.fullName}</p>
                         <p>Address : {item.address}</p>
                         <p>City : {item.city}</p>
@@ -162,13 +165,13 @@ export default function Account() {
                         <p>Postal Code : {item.postalCode}</p>
                         <button
                           onClick={() => handleUpdateAddress(item)}
-                          className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md hover:bg-hover transition-custom"
+                          className="mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide rounded-md hover:bg-hover transition-custom"
                         >
                           Update
                         </button>
                         <button
                           onClick={() => handleDelete(item._id)}
-                          className="mt-5  inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide rounded-md hover:bg-red-500 transition-custom"
+                          className="mt-5  inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide rounded-md hover:bg-red-500 transition-custom"
                         >
                           {componentLoader &&
                           componentLoader.loading &&
@@ -197,7 +200,7 @@ export default function Account() {
             <div className="mt-4">
               <button
                 onClick={() => setShowAddressForm(!showAddressForm)}
-                className="mt-5 rounded-md inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide hover:bg-hover transition-custom"
+                className="mt-5 rounded-md inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide hover:bg-hover transition-custom"
               >
                 {showAddressForm ? "Hide Address Form" : "Add New Address"}
               </button>
@@ -222,7 +225,7 @@ export default function Account() {
                 </div>
                 <button
                   onClick={handleAddOrUpdateAddress}
-                  className="rounded-md mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium uppercase tracking-wide"
+                  className="rounded-md mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide"
                 >
                   {componentLoader && componentLoader.loading ? (
                     <ComponentLevelLoader
