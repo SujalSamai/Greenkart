@@ -83,19 +83,3 @@ export default function Facts() {
     </section>
   );
 }
-
-/*
-Between 1950 and 2015, an estimated 7,800 million tonnes of plastics were manufactured, and half of this was produced in the last 13 years alone. Out of which only 9% is recycled.
-
-Microplastics have been reported in food for human consumption. The average person could be eating up to 5 grams of plastic a week{" "}
-
-8 million tonnes of plastic pollution enters our oceans each year. By 2050, there will be more plastic in our oceans than fish
-
-Recycled plastics are mostly recycled into products of lesser quality which are less likely to be further recycled.
-
-Clothing made with synthetic fabric does not compost &amp; occupies 5% of all landfill space. The industry is responsible for up to 10% of total global carbon emissions, and is estimated to increase by 50% till 2030
-
-Whilst sunscreen is very effective at absorbing UV rays and protecting your skin, it is a culprit in the massive destruction of coral reefs in the world's oceans.
-
-80% of countries still allow cosmetics to be tested on animals, subjecting 100 million animals a year to possible allergens that often cause suffering and death.
-*/

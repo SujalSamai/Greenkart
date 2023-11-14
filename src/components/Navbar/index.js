@@ -127,9 +127,9 @@ export default function Navbar() {
                 >
                   <img
                     title="Account"
-                    src="https://img.icons8.com/3d-fluency/94/user-male-circle.png"
+                    src="https://img.icons8.com/?size=80&id=91244&format=png"
                     alt="user-male-circle"
-                    className="w-8 h-8 hover:scale-110 transition-custom m-1"
+                    className="w-10 h-10 hover:scale-110 transition-custom"
                   />
                   <span className="text-xs hidden md:block">account</span>
                 </button>
@@ -142,9 +142,9 @@ export default function Navbar() {
                 >
                   <img
                     title="Cart"
-                    src="https://img.icons8.com/3d-fluency/94/shopping-cart-loaded.png"
+                    src="https://d3sxshmncs10te.cloudfront.net/icon/free/svg/1794982.svg?token=eyJhbGciOiJoczI1NiIsImtpZCI6ImRlZmF1bHQifQ__.eyJpc3MiOiJkM3N4c2htbmNzMTB0ZS5jbG91ZGZyb250Lm5ldCIsImV4cCI6MTcwMDA5MjgwMCwicSI6bnVsbCwiaWF0IjoxNjk5ODg3ODYyfQ__.74e534c3529efba7711bd098706cace89bc0125bbe1355ff641f2f0adc7429d6"
                     alt="shopping-cart-loaded"
-                    className="w-8 h-8 hover:scale-110 transition-custom m-1"
+                    className="w-10 h-10 hover:scale-110 transition-custom"
                   />
                   <span className="text-xs hidden md:block">cart</span>
                 </button>
@@ -162,7 +162,7 @@ export default function Navbar() {
                 >
                   <img
                     title="Client View"
-                    src="https://img.icons8.com/3d-fluency/94/change-user-male.png"
+                    src="https://img.icons8.com/office/80/change-user-male.png"
                     alt="change-user-male"
                     className="w-8 h-8 hover:scale-110 transition-custom"
                   />
@@ -179,9 +179,9 @@ export default function Navbar() {
                 >
                   <img
                     title="Admin View"
-                    src="https://img.icons8.com/3d-fluency/94/user-shield.png"
+                    src="https://d3sxshmncs10te.cloudfront.net/icon/free/svg/1316200.svg?token=eyJhbGciOiJoczI1NiIsImtpZCI6ImRlZmF1bHQifQ__.eyJpc3MiOiJkM3N4c2htbmNzMTB0ZS5jbG91ZGZyb250Lm5ldCIsImV4cCI6MTcwMDA5MjgwMCwicSI6bnVsbCwiaWF0IjoxNjk5ODg3NTU3fQ__.2af9d0f15ee33036717aae2b94d812daa69fe89519d88c0d8892d9eb4a778ccd"
                     alt="user-shield"
-                    className="w-8 h-8 hover:scale-110 transition-custom m-1"
+                    className="w-10 h-10 hover:scale-110 transition-custom"
                   />
                   <span className="text-xs hidden md:block">admin</span>
                 </button>
@@ -191,7 +191,7 @@ export default function Navbar() {
               <button
                 onClick={handleLogout}
                 className={
-                  "font-buttons flex items-center md:bg-red-600 md:pl-2 md:pr-4 md:py-2 text-sm rounded-md font-medium tracking-wide md:shadow-custom hover:bg-red-700 text-white hover:scale-105"
+                  "font-buttons flex items-center md:bg-red-600 md:pl-2 md:pr-4 md:py-2 text-sm rounded-md font-medium tracking-wide md:shadow-custom hover:bg-red-700 text-white hover:scale-105 transition-custom"
                 }
               >
                 <MdOutlinePowerSettingsNew
@@ -204,7 +204,7 @@ export default function Navbar() {
               <button
                 onClick={handleLogin}
                 className={
-                  "font-buttons flex items-center gap-1 bg-[#009197] px-4 py-3 text-sm rounded-md font-medium tracking-wide shadow-custom hover:bg-sky-700 text-white hover:scale-105"
+                  "font-buttons flex items-center gap-1 bg-[#009197] px-4 py-3 text-sm rounded-md font-medium tracking-wide shadow-custom hover:bg-sky-700 text-white hover:scale-105 transition-custom"
                 }
               >
                 <HiUser className="w-5 h-5" />

@@ -251,6 +251,10 @@ export const AvailableSizes = [
     id: "xl",
     label: "XL",
   },
+  {
+    id: "xxl",
+    label: "XXL",
+  },
 ];
 
 export const firebaseConfig = {

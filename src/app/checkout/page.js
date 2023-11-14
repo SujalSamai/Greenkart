@@ -63,6 +63,7 @@ export default function Checkout() {
           orderItems: cartItems.map((item) => ({
             qty: item.quantity,
             product: item.productID,
+            size: item.size,
           })),
           paymentMethod: "Stripe",
           totalPrice: cartItems.reduce(
@@ -127,7 +128,7 @@ export default function Checkout() {
         },
         unit_amount: item.productID.price * item.quantity * 100 + 40 * 100,
       },
-      quantity: 1,
+      quantity: item.quantity,
     }));
 
     const res = await callStripeSession(createLineItems);
@@ -302,7 +303,7 @@ export default function Checkout() {
                   Object.keys(checkoutFormData.shippingAddress).length === 0
                 }
                 onClick={handleCheckout}
-                className="disabled:opacity-50 disabled:cursor-not-allowed w-full mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide rounded-md"
+                className="disabled:opacity-50 disabled:cursor-not-allowed w-full mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide rounded-md hover:bg-hover transition-custom"
               >
                 Checkout
               </button>

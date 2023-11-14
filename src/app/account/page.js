@@ -94,7 +94,6 @@ export default function Account() {
       address: getCurrentAddress.address,
     });
     setCurrentEditedAddressId(getCurrentAddress._id);
-    setShowAddressForm(false);
   }
 
   async function handleDelete(getCurrentAddressID) {
@@ -117,7 +116,6 @@ export default function Account() {
       });
     }
   }
-
   useEffect(() => {
     if (user !== null) extractAllAddresses();
   }, [user]);
@@ -225,7 +223,7 @@ export default function Account() {
                 </div>
                 <button
                   onClick={handleAddOrUpdateAddress}
-                  className="rounded-md mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide"
+                  className="rounded-md mt-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide hover:bg-hover transition-custom"
                 >
                   {componentLoader && componentLoader.loading ? (
                     <ComponentLevelLoader

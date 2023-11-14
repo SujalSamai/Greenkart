@@ -1,4 +1,8 @@
+import { useRouter } from "next/navigation";
+
 export default function Hero() {
+  const router = useRouter();
+
   return (
     <div className="grid max-w-screen-xl px-4 py-8 mx-auto  lg:gap-8 xl:gap-0 lg:grid-cols-12">
       <div className="mr-auto place-self-center lg:col-span-7">
@@ -6,12 +10,13 @@ export default function Hero() {
           Best eco-friendly collection.
         </h1>
         <p className="max-w-2xl mb-6 text-green-900 lg:mb-8 tracking-wide text-justify font-medium">
-          Welcome to <b>GREENKART</b> – your one-stop destination for organic,
-          sustainable and environmentally conscious shopping! In a world where
-          our choices have a profound impact on the planet, we believe that
-          e-commerce can be a force for good. Our mission is to provide you with
-          a unique online shopping experience that not only caters to your needs
-          but also champions the well-being of our planet.
+          Welcome to <b className="font-heading text-xl font-bold">Greenkart</b>{" "}
+          – your one-stop destination for organic, sustainable and
+          environmentally conscious shopping! In a world where our choices have
+          a profound impact on the planet, we believe that e-commerce can be a
+          force for good. Our mission is to provide you with a unique online
+          shopping experience that not only caters to your needs but also
+          champions the well-being of our planet.
           <br />
           <br />
           Introducing our latest eco-friendly collection, a testament to our

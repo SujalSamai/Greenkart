@@ -77,22 +77,29 @@ export default function OrderDetails() {
                         className="w-full hidden md:block"
                       />
                     </div>
-                    <div className="border-b border-gray-300 md:flex-row flex-col flex justify-between items-start w-full pb-8 space-y-4 md:space-y-0">
+                    <div className="border-b border-gray-300 flex-col flex justify-between items-start w-full pb-8 space-y-4 md:space-y-0">
                       <div className="w-full flex flex-col justify-start items-start space-y-8">
                         <h3 className="text-xl font-semibold leading-6 text-gray-900">
                           {item && item.product && item.product.name}
                         </h3>
                       </div>
                       <div className="w-full flex justify-between items-start space-x-8">
-                        <h3 className="text-xl font-semibold leading-6 text-gray-900">
-                          ₹{item && item.product && item.product.price}
+                        <h3 className="font-semibold leading-6 text-gray-700">
+                          Price: ₹{item && item.product && item.product.price}
                         </h3>
                       </div>
                       <div className="w-full flex justify-between items-start space-x-8">
-                        <h3 className="text-xl font-semibold leading-6 text-gray-900">
+                        <h3 className="font-semibold leading-6 text-gray-700">
                           Quantity: {item && item.qty && item.qty}
                         </h3>
                       </div>
+                      {item && item.size && (
+                        <div className="w-full flex justify-between items-start space-x-8">
+                          <h3 className="font-semibold leading-6 text-gray-700">
+                            Size: {item && item.size && item.size.toUpperCase()}
+                          </h3>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))
@@ -173,7 +180,7 @@ export default function OrderDetails() {
           </div>
           <button
             onClick={() => router.push(`/product/listing/all-products`)}
-            className=" mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide rounded-md"
+            className=" mt-5 mr-5 inline-block bg-secondary text-white px-5 py-3 text-xs font-medium tracking-wide rounded-md hover:bg-hover transition-custom"
           >
             Shop Again
           </button>

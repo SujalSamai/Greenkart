@@ -13,7 +13,7 @@ export default function WhyUs() {
       <div className="flex flex-col md:flex-row gap-14 md:gap-5 mt-20">
         <div className="md:w-3/12 flex flex-col items-center justify-between">
           <div className="flex items-center justify-center p-4 h-96">
-            <img src="/organic2.png" className="h-full rounded-2xl"></img>
+            <img src="/organic2.png" className="h-fit rounded-2xl"></img>
           </div>
           <p className="border-2 border-dashed rounded-full px-4 py-1 max-w-fit">
             authentic &amp; organic products.

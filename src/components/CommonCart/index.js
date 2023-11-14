@@ -47,9 +47,20 @@ export default function CommonCart({
                                   cartItem.productID &&
                                   cartItem.productID.brand}
                               </p>
-                              <p className="text-sm font-semibold text-gray-700">
-                                Quantity: {cartItem && cartItem.quantity}
-                              </p>
+                              <div>
+                                <p className="text-sm font-semibold text-gray-700">
+                                  Quantity: {cartItem && cartItem.quantity}
+                                </p>
+                                <p className="text-sm font-semibold text-gray-700">
+                                  {cartItem &&
+                                    cartItem.size &&
+                                    `Size: ${
+                                      cartItem &&
+                                      cartItem.size.length > 0 &&
+                                      cartItem.size.toUpperCase()
+                                    }`}
+                                </p>
+                              </div>
                             </div>
                             <div className="mt-4 flex gap-3 items-end justify-between sm:mt-0 sm:items-start sm:justify-end">
                               <p className="shrink-0 w-20 text-base font-semibold text-gray-950 sm:order-1 sm:ml-8 sm:text-right">

@@ -84,6 +84,8 @@ export default function Cart() {
     );
   }
 
+  console.log(cartItems);
+
   return (
     <CommonCart
       componentLoader={componentLoader}

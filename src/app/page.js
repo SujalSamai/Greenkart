@@ -15,7 +15,6 @@ export default function Home() {
   const { isAuthUser } = useContext(GlobalContext);
 
   const [products, setProducts] = useState([]);
-  const router = useRouter();
 
   async function getListOfProducts() {
     const res = await getAllAdminProducts();
@@ -38,7 +37,7 @@ export default function Home() {
           className="text-2xl md:text-4xl bg-gradient-to-r from-teal-800 to-secondary text-neutral-50"
           separator="🪴"
         />
-        <SaleCollection products={products} />
+        <SaleCollection saleName="Diwali" products={products} />
         <Facts />
         <ShopByCategory />
       </section>

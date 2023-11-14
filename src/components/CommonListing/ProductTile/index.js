@@ -17,9 +17,11 @@ export default function ProductTile({ item }) {
           className="h-full w-full object-cover transition-custom group-hover:scale-125 border border-dashed border-secondary rounded-md"
         />
       </div>
-      <h3 className="my-1 mx-1 min-w-[6rem] h-7 text-secondary text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">
-        {item.name}
-      </h3>
+      <div>
+        <h3 className="my-1 mx-1 min-w-[6rem] h-7 text-secondary text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">
+          {item.name}
+        </h3>
+      </div>
       <p className="mx-1 min-w-[6rem] h-5 text-secondary/80 text-sm font-semibold  whitespace-nowrap overflow-hidden text-ellipsis">
         {item.brand}
       </p>

@@ -20,6 +20,7 @@ export default function CommonDetails({ item }) {
       productID: getItem._id,
       userID: user._id,
       quantity: itemQuantity,
+      size: sizeSelect,
     });
 
     if (res.success) {

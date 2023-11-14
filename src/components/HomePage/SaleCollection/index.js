@@ -1,11 +1,14 @@
-export default function SaleCollection({ products }) {
+import { useRouter } from "next/navigation";
+
+export default function SaleCollection({ saleName, products }) {
+  const router = useRouter();
   return (
     <div className="max-w-screen-xl px-4 py-16 mx-auto sm:py-12 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-stretch">
         <div className="grid p-6 bg-gray-100 rounded place-content-center sm:p-8">
           <div className="max-w-md mx-auto text-center lg:text-left">
             <h2 className="font-heading text-4xl lg:text-5xl font-bold text-gray-900">
-              Diwali Sale Collection
+              {saleName} Sale Collection
             </h2>
             <button
               onClick={() => router.push("/product/listing/all-products")}
@@ -24,7 +27,7 @@ export default function SaleCollection({ products }) {
                   .map((productItem) => (
                     <li
                       onClick={() => router.push(`/product/${productItem._id}`)}
-                      className="cursor-pointer"
+                      className="cursor-pointer hover:scale-[1.02] transition-custom hover:border-2 border-dashed border-gray-600 px-3 py-2"
                       key={productItem._id}
                     >
                       <div>
@@ -35,7 +38,7 @@ export default function SaleCollection({ products }) {
                         />
                       </div>
                       <div className="mt-3">
-                        <h3 className="font-medium text-gray-900">
+                        <h3 className="font-medium text-gray-900 text-xl">
                           {productItem.name}
                         </h3>
                         <h3 className="font-medium text-gray-900">
