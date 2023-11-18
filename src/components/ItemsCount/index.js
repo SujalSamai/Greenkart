@@ -9,7 +9,7 @@ export default function ItemsCount({ count, setCount }) {
   }
 
   return (
-    <div className="w-5/12 flex items-center justify-between">
+    <div className="w-5/12 flex items-center justify-between mx-auto">
       <button
         className="text-lg font-bold border border-gray-400 flex items-center justify-center w-4/12 px-2 py-1"
         onClick={handleIncrement}

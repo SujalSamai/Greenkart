@@ -72,9 +72,9 @@ export default function Login() {
   return (
     <div className="relative">
       <div className="flex flex-col items-center justify-between py-0 lg:px-10 mt-8 mr-auto xl:px-5 lg:flex-row">
-        <div className="flex flex-col justify-center items-center w-full px-10 lg:flex-row">
+        <div className="flex flex-col justify-center items-center w-full px-6 lg:px-10 lg:flex-row">
           <div className="w-full mt-20 mr-0 mb-0 ml-0 relative max-w-2xl lg:mt-0 lg:w-5/12">
-            <div className="flex flex-col items-center justify-start p-10 bg-white shadow-2xl rounded-md relative z-10">
+            <div className="flex flex-col items-center justify-start p-6 lg:p-10 bg-white shadow-2xl rounded-md relative z-10">
               <p className="w-full text-lg lg:text-2xl font-medium text-center">
                 Login to GreenKart.
               </p>
@@ -97,7 +97,7 @@ export default function Login() {
                   ) : null
                 )}
                 <button
-                  className="rounded-md text-white inline-flex w-full items-center justify-center bg-secondary px-6 py-2 md:py-4 text-lg  transition-custom focus:shadow font-medium tracking-wide disabled:opacity-80 shadow-custom hover:bg-hover hover:scale-105"
+                  className="rounded-md text-white inline-flex w-full items-center justify-center bg-secondary px-6 py-2 md:py-4 lg:text-lg  transition-custom focus:shadow font-medium tracking-wide disabled:opacity-80 shadow-custom hover:bg-hover hover:scale-105"
                   disabled={!isFormValid()}
                   onClick={handleLogin}
                 >
@@ -115,7 +115,7 @@ export default function Login() {
                   <p>New to GreenKart? </p>
                   <button
                     onClick={() => router.push("/register")}
-                    className="rounded-md inline-flex w-full items-center justify-center bg-secondary px-6 py-2 md:py-4 text-lg shadow-custom hover:bg-hover hover:scale-105
+                    className="rounded-md inline-flex w-full items-center justify-center bg-secondary px-6 py-2 md:py-4 lg:text-lg shadow-custom hover:bg-hover hover:scale-105
                      text-white transition-custom focus:shadow font-medium tracking-wide
                      "
                   >

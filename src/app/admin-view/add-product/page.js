@@ -145,15 +145,15 @@ export default function AdminAddNewProduct() {
 
   return (
     <div className="w-full mt-5 mr-0 mb-0 ml-0 relative">
-      <div className="flex flex-col items-start justify-start p-10 bg-white shadow-2xl rounded-md relative">
-        <h1 className="text-5xl text-secondary font-heading font-bold">
+      <div className="flex flex-col items-start justify-start p-5 lg:p-10 bg-white shadow-2xl rounded-md relative">
+        <h1 className="text-3xl lg:text-5xl text-secondary font-heading font-bold">
           Add your product
         </h1>
         <div className="w-full mt-6 mr-0 mb-0 ml-0 space-y-8 text-secondary">
           <p className="font-bold">Add image of your product below:</p>
           <label
             for="images"
-            className="flex gap-5 flex-col justify-center items-center h-56 p-6 border-2 border-dashed border-[#555] cursor-pointer rounded-lg transition-custom"
+            className="w-full flex gap-5 flex-col justify-center items-center h-56 p-6 border-2 border-dashed border-[#555] cursor-pointer rounded-lg transition-custom"
             id="dropcontainer"
           >
             <span class="drop-title">Drop image here</span> or{" "}
@@ -163,7 +163,7 @@ export default function AdminAddNewProduct() {
               max="1000000"
               type="file"
               onChange={handleImage}
-              className="flex file:ml-2 file:bg-secondary file:text-primary file:p-2 file:rounded-lg rounded-lg border border-secondary 
+              className="w-[13rem] md:w-6/12 flex file:ml-2 file:bg-secondary file:text-primary file:p-2 file:rounded-lg rounded-lg border border-secondary 
               p-2 cursor-pointer file:cursor-pointer file:mr-12 file:text-sm"
               required
             />

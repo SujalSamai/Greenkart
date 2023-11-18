@@ -187,7 +187,9 @@ export default function Checkout() {
     <div>
       <div className="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
         <div className="px-4 pt-8">
-          <p className="text-2xl font-bold">Cart Summary</p>
+          <p className="text-2xl md:text-4xl font-bold font-heading">
+            Cart Summary
+          </p>
           <div className="mt-4 space-y-3 rounded-md border bgwhite px-2 py-4 sm:px-5">
             {cartItems && cartItems.length ? (
               cartItems.map((item) => (

@@ -46,7 +46,7 @@ export default function OrderDetails() {
   return (
     <div className="mt-5 py-14 px-6 md:px-6">
       <div className="flex justify-start items-start space-y-2 flex-col">
-        <h1 className="text-2xl lg:text-4xl font-bold leading-7 lg:leading-9 text-gray-900">
+        <h1 className="text-base md:text-2xl lg:text-4xl font-bold leading-7 lg:leading-9 text-gray-900">
           Order #{orderDetails && orderDetails._id}
         </h1>
         <p className="text-base font-medium leading-6 text-gray-600">
@@ -62,7 +62,7 @@ export default function OrderDetails() {
       <div className="mt-10 flex flex-col justify-center xl:flex-row items-stretch w-ful xl:space-x-8 md:space-y-6 xl:space-y-0 ">
         <div className="flex flex-col justify-center items-start w-full space-y-4 md:space-y-6 xl:space-y-8 ">
           <div className="flex flex-col justify-start item-start bg-green-50 px-4 py-4 md:p-6 xl:p-8 w-full shadow-custom">
-            <p className="font-bold text-lg">Your order summary </p>
+            <p className="font-bold md:text-lg">Your order summary </p>
             {orderDetails &&
             orderDetails.orderItems &&
             orderDetails.orderItems.length
@@ -79,7 +79,7 @@ export default function OrderDetails() {
                     </div>
                     <div className="border-b border-gray-300 flex-col flex justify-between items-start w-full pb-8 space-y-4 md:space-y-0">
                       <div className="w-full flex flex-col justify-start items-start space-y-8">
-                        <h3 className="text-xl font-semibold leading-6 text-gray-900">
+                        <h3 className="md:text-xl font-semibold leading-6 text-gray-900">
                           {item && item.product && item.product.name}
                         </h3>
                       </div>
@@ -145,10 +145,10 @@ export default function OrderDetails() {
             </h3>
             <div className="flex flex-col justify-start flex-shrink-0">
               <div className="flex justify-center gap-4 flex-col w-full md:justify-start py-8 border-b border-gray-200">
-                <p className="text-base font-semibold leading-4 text-left text-gray-950">
+                <p className="text-sm md:text-base font-semibold leading-4 text-left text-gray-950">
                   Name: {user?.name}
                 </p>
-                <p className="text-base font-semibold leading-4 text-left text-gray-950">
+                <p className="text-sm md:text-base font-semibold leading-4 text-left text-gray-950">
                   Email: {user?.email}
                 </p>
               </div>
@@ -156,7 +156,7 @@ export default function OrderDetails() {
           </div>
           <div className="flex justify-between xl:h-full items-stretch w-full flex-col mt-6 md:mt-0 bg-white shadow-custom">
             <div className="flex justify-center md:justify-start xl:flex-col flex-col md:space-x-6 lg:space-x-8 xl:spce-x-0 space-y-4 md:space-y-0 xl:space-y-12 md:flex-row item-center md:items-start">
-              <div className="flex justify-start items-start flex-col space-y-4 px-4 py-6 font-semibold">
+              <div className="flex justify-start items-start flex-col space-y-4 px-4 py-6 font-semibold text-sm md:text-base">
                 <h3 className="text-xl leading-6 text-gray-900">
                   Shipping Address
                 </h3>

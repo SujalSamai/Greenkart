@@ -12,7 +12,7 @@ export default function CommonCart({
   return (
     <section className="h-screen bg-gray-100">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mt-8 max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mt-8 max-w-screen-xl sm:px-6 lg:px-8">
           <div className="bg-white shadow">
             <div className="px-4 py-6 sm:px-8 sm:py-10">
               <div className="flow-root">
@@ -140,7 +140,7 @@ export default function CommonCart({
                   <button
                     onClick={() => router.push("/checkout")}
                     disabled={cartItems && cartItems.length === 0}
-                    className="disabled:opacity-50 group inline-flex w-full items-center justify-center bg-secondary px-6 py-4 text-lg text-white font-medium tracking-wide rounded-md hover:bg-hover transition-custom"
+                    className="disabled:opacity-50 group inline-flex w-full items-center justify-center bg-secondary px-6 py-2 md:py-4 md:text-lg text-white font-medium tracking-wide rounded-md hover:bg-hover transition-custom"
                   >
                     Checkout
                   </button>

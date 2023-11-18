@@ -92,14 +92,14 @@ export default function CartModal() {
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
-                <div className="ml-4 flex flex-1 flex-col">
+                <div className="ml-4 flex flex-1 flex-col ">
                   <div>
                     <h3 className="text-sm">
                       {cartItem &&
                         cartItem.productID &&
                         cartItem.productID.name}
                     </h3>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-wrap">
                       <p className="mt-1 text-xs text-gray-600">
                         ₹
                         {cartItem &&

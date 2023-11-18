@@ -57,8 +57,8 @@ export default function Orders() {
 
   return (
     <section>
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div className="mt-8 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto lg:px-8 ">
+        <div className="mt-8 mx-auto max-w-screen-xl px-0 sm:px-6 lg:px-8">
           <div>
             <div className="px-4 py-6 sm:px-8 sm:py-10 ">
               <div className="mb-4 text-4xl font-heading font-bold">
@@ -70,7 +70,7 @@ export default function Orders() {
                     {allOrdersForUser.map((item) => (
                       <li
                         key={item._id}
-                        className="bg-coolmint p-5 flex flex-col py-6 text-left shadow-custom shadow-secondary/30 bg-white"
+                        className="bg-coolmint p-2 sm:p-5 flex flex-col py-6 text-left shadow-custom shadow-secondary/30 bg-white"
                       >
                         <div className="flex items-center gap-3 ">
                           <GiCardboardBoxClosed className="h-10 w-10" />
@@ -94,15 +94,15 @@ export default function Orders() {
                             </p>
                           </div>
                         </div>
-                        <div className="flex md:flex-row flex-col items-center bg-primary px-5 mt-6 pt-5">
-                          <h2 className="font-bold flex-1 items-center">
+                        <div className="flex md:flex-row flex-col md:items-center bg-primary px-5 mt-6 pt-5">
+                          <h2 className="font-bold flex-1 items-center text-sm sm:text-base">
                             OrderID: #{item._id}
                           </h2>
                           <div className="flex items-center">
-                            <p className="mr-3 text-md font-medium text-gray-900">
+                            <p className="mr-3 font-medium text-gray-900 text-sm sm:text-base">
                               Total paid amount:
                             </p>
-                            <p className="mr-3 text-xl font-semibold text-gray-900">
+                            <p className="mr-3 font-semibold text-gray-900">
                               ₹{item.totalPrice}
                             </p>
                           </div>

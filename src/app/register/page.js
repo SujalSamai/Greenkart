@@ -64,9 +64,9 @@ export default function Register() {
   return (
     <div className="relative">
       <div className="flex flex-col items-center justify-between py-0 md:px-10 mt-8 mr-auto xl:px-5 lg:flex-row">
-        <div className="flex flex-col justify-center items-center w-full px-10 lg:flex-row">
-          <div className="w-full mt-20 mr-0 mb-0 ml-0 relative max-w-2xl lg:mt-0 lg:w-5/12">
-            <div className="flex flex-col items-center justify-start p-10 bg-white shadow-2xl rounded-md relative z-10">
+        <div className="flex flex-col justify-center items-center w-full px-5 md:px-10 lg:flex-row">
+          <div className="w-full mt-20 mr-0 mb-0 ml-0 relative lg:mt-0 lg:w-5/12">
+            <div className="flex flex-col items-center justify-start p-6 md:p-10 bg-white shadow-2xl rounded-md relative z-10">
               <p className="w-full text-lg md:text-2xl font-medium text-center">
                 {isRegisterd
                   ? "You are now registered with GreenKart!"
@@ -110,7 +110,7 @@ export default function Register() {
                     ) : null
                   )}
                   <button
-                    className="rounded-md inline-flex w-full items-center justify-center bg-secondary px-6 py-2 md:py-4 text-lg text-white transition-custom focus:shadow font-medium tracking-wide disabled:opacity-80 disabled:cursor-not-allowed shadow-custom hover:bg-hover hover:scale-105"
+                    className="rounded-md inline-flex w-full items-center justify-center bg-secondary px-6 py-2 md:py-4 lg:text-lg text-white transition-custom focus:shadow font-medium tracking-wide disabled:opacity-80 disabled:cursor-not-allowed shadow-custom hover:bg-hover hover:scale-105"
                     disabled={!isFormValid()}
                     onClick={handleRegisterOnSubmit}
                   >

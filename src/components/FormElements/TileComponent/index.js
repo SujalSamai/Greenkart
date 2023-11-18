@@ -8,7 +8,7 @@ export default function TileComponent({ data, selected = [], onClick }) {
           onClick={() => onClick(dataItem)}
         >
           <span
-            className={`rounded-md border border-secondary px-4 py-2 font-bold ${
+            className={`rounded-md border border-secondary px-3 sm:px-4 py-2 font-bold ${
               selected &&
               selected.length &&
               selected.map((item) => item.id).indexOf(dataItem.id) !== -1

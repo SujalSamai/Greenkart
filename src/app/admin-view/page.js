@@ -67,22 +67,22 @@ export default function AdminView() {
     <section>
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div>
-          <div className="mt-6 text-5xl mx-4 font-bold text-secondary font-heading">
+          <div className="mt-10 lg:mt-6 text-3xl lg:text-5xl mx-4 font-bold text-secondary font-heading">
             Manage Your Orders
           </div>
-          <div className="px-4 py-6 sm:px-8 sm:py-10">
+          <div className="lg:px-4 py-6 sm:py-10">
             <div className="flow-root">
               {allOrdersForAllUsers && allOrdersForAllUsers.length ? (
                 <ul className="flex flex-col gap-4">
                   {allOrdersForAllUsers.map((item) => (
                     <li
                       key={item._id}
-                      className="bg-coolmint p-5 flex flex-col py-6 text-left shadow-custom shadow-secondary/30 bg-white"
+                      className="bg-coolmint p-2 sm:p-5 flex flex-col py-6 text-left shadow-custom shadow-secondary/30 bg-white"
                     >
                       <div className="flex flex-col md:flex-row gap-2 md:items-center">
                         <GiCardboardBoxClosed className="h-10 w-10" />
                         <div className="flex-1">
-                          <h1 className="font-bold text-lg">
+                          <h1 className="font-bold md:text-lg">
                             OrderID: #{item._id}
                           </h1>
                           <p className="text-sm text-gray-600">
@@ -113,7 +113,7 @@ export default function AdminView() {
                               {item?.user?.name}
                             </p>
                           </div>
-                          <div className="flex items-center md:my-0.5">
+                          <div className="flex items-center flex-wrap md:my-0.5">
                             <p className="mr-1 text-sm font-medium text-gray-900">
                               Email :
                             </p>
