@@ -126,7 +126,7 @@ export default function Checkout() {
           images: [item.productID.imageUrl],
           name: item.productID.name,
         },
-        unit_amount: item.productID.price * item.quantity * 100 + 40 * 100,
+        unit_amount: item.productID.price * 100,
       },
       quantity: item.quantity,
     }));

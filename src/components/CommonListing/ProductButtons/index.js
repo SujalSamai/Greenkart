@@ -119,7 +119,7 @@ export default function ProductButtons({ item }) {
   ) : (
     <div className="flex flex-col">
       {showModal && (
-        <div className="absolute top-0 left-0 bg-black/80 w-full h-full z-10">
+        <div className="absolute bottom-0 left-0 bg-black/80 w-full h-full z-10">
           <div className="absolute bottom-0 md:bottom-44 left-0 md:left-[28rem] w-full md:w-5/12 bg-secondary h-44 md:h-64 shadow-custom flex flex-col justify-between items-center gap-3 pt-4 md:pt-10 rounded-md z-50">
             <span className="absolute top-0 w-full mr-2 text-lg text-gray-300 flex justify-end">
               <IoIosCloseCircle
