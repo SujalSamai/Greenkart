@@ -12,9 +12,22 @@ export async function POST(req) {
 
     if (isAuthUser) {
       const res = await req.json();
+      // console.log(res.length);
 
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
+        shipping_options: [
+          {
+            shipping_rate_data: {
+              type: "fixed_amount",
+              fixed_amount: {
+                amount: 40 * 100 * res.length,
+                currency: "inr",
+              },
+              display_name: "Shipping Charges",
+            },
+          },
+        ],
         line_items: res,
         mode: "payment",
         success_url:

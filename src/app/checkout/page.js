@@ -116,7 +116,6 @@ export default function Checkout() {
       },
     });
   }
-
   async function handleCheckout() {
     const stripe = await stripePromise;
     const createLineItems = cartItems.map((item) => ({
@@ -126,10 +125,15 @@ export default function Checkout() {
           images: [item.productID.imageUrl],
           name: item.productID.name,
         },
-        unit_amount: item.productID.price * 100,
+        unit_amount_decimal: item.productID.price * 100,
       },
       quantity: item.quantity,
     }));
+
+    const price = cartItems.reduce(
+      (total, item) => item.productID.price * item.quantity + total + 40,
+      0
+    );
 
     const res = await callStripeSession(createLineItems);
     setIsOrderProcessing(true);
