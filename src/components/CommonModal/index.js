@@ -13,7 +13,7 @@ export default function CommonModal({
   showModalTitle,
 }) {
   return (
-    <Transition.Root show={show} as={Fragment}>
+    <Transition.Root appear show={show} as={Fragment}>
       <Dialog as="div" className={"relative z-10"} onClose={setShow}>
         <Transition.Child
           as={Fragment}

@@ -9,6 +9,7 @@ export default function ProductTile({ item }) {
       onClick={() => {
         router.push(`/product/${item._id}`);
       }}
+      className="relative"
     >
       <div className="overflow-hidden aspect-w-[1] aspect-h-[1] h-44 md:h-64">
         <img
@@ -26,7 +27,7 @@ export default function ProductTile({ item }) {
         {item.brand}
       </p>
       {item.onSale === "yes" ? (
-        <div className="absolute top-6 left-6 rounded-sm bg-secondary/90">
+        <div className="absolute top-3 left-3 rounded-sm bg-secondary/90">
           <p className="rounded-full p-1 text-xs font-bold tracking-wide text-white sm:py-1 sm:px-3">
             Sale
           </p>

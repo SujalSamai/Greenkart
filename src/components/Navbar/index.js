@@ -122,7 +122,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center justify-center md:order-2 gap-1 md:gap-3">
             {!isAdminView && isAuthUser ? (
-              <Fragment>
+              <>
                 <button
                   className={"md:mt-1.5 flex flex-col items-center"}
                   onClick={() => {
@@ -144,7 +144,7 @@ export default function Navbar() {
                   <LiaShoppingCartSolid className="h-8 w-8 hover:scale-105 transition-custom" />
                   <span className="text-xs hidden md:block">cart</span>
                 </button>
-              </Fragment>
+              </>
             ) : null}
             {user?.role === "admin" ? (
               isAdminView ? (
@@ -200,7 +200,7 @@ export default function Navbar() {
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
-              className="inline-flex items-center p-2 mr-2 text-smtext-white md:hidden "
+              className="inline-flex items-center p-2 mr-2 text-sm text-white md:hidden "
               aria-controls="navbar-sticky"
               aria-expanded="false"
               onClick={() => {
