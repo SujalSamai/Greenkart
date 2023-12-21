@@ -14,10 +14,16 @@ export async function PUT(req) {
       //extract the post data
       const {
         _id,
+        brand,
         name,
         price,
         description,
         category,
+        manufactured,
+        color,
+        dimensions,
+        skinType,
+        availability,
         sizes,
         deliveryInfo,
         onSale,
@@ -29,10 +35,16 @@ export async function PUT(req) {
       const updatedProduct = await Product.findOneAndUpdate(
         { _id: _id },
         {
+          brand,
           name,
           price,
           description,
           category,
+          manufactured,
+          color,
+          dimensions,
+          skinType,
+          availability,
           sizes,
           deliveryInfo,
           onSale,
