@@ -67,7 +67,7 @@ export default function AdminView() {
     <section>
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div>
-          <div className="mt-10 lg:mt-6 text-3xl lg:text-5xl mx-4 font-bold text-secondary font-heading">
+          <div className="mt-10 lg:mt-6 text-4xl lg:text-5xl mx-2 md:mx-4 font-bold text-secondary font-heading">
             Manage Your Orders
           </div>
           <div className="lg:px-4 py-6 sm:py-10">

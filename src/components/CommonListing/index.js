@@ -14,7 +14,7 @@ export default function CommonListing({ data }) {
   }, []);
   return (
     <section className="py-12 sm:py-16">
-      <div className="mx-auto max-w-screen-xl sm:px-6 lg:px-8">
+      <div className="mx-auto px-3 lg:px-20">
         <div>
           {navOptions.map((item) =>
             pathName.includes(item.path) ? (
@@ -24,12 +24,12 @@ export default function CommonListing({ data }) {
             ) : null
           )}
         </div>
-        <div className="grid grid-cols-2 gap-1 md:gap-3 lg:gap-4 md:grid-cols-3 lg:grid-cols-4 lg:mt-16">
+        <div className="grid grid-cols-2 gap-x-2 gap-y-10 lg:gap-x-3 lg:gap-y-16 md:grid-cols-3 lg:grid-cols-4 mt-16">
           {data && data.length
             ? data.map((item) => (
                 <article
                   key={item._id}
-                  className="max-w-[20rem] flex flex-col overflow-hidden cursor-pointer bg-white md:rounded-md justify-between shadow-custom md:p-3"
+                  className="max-w-[20rem] flex flex-col overflow-hidden cursor-pointer bg-white/40 justify-between"
                 >
                   <ProductTile item={item} />
                   <ProductButtons item={item} />

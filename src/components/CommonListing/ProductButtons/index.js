@@ -175,7 +175,7 @@ export default function ProductButtons({ item }) {
       <div className="flex">
         <button
           onClick={() => setShowModal(true)}
-          className="mx-1 my-2 mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium tracking-wide text-white rounded-md hover:bg-hover transition-custom"
+          className="mx-4 my-2 mt-1.5 flex w-full justify-center bg-secondary px-5 py-3 text-xs font-medium tracking-wide text-white rounded-md hover:bg-hover transition-custom"
         >
           {componentLoader &&
           componentLoader.loading &&

@@ -5,7 +5,7 @@ export default async function AdminAllProducts() {
   const allAdminProducts = await getAllAdminProducts();
   return (
     <>
-      <h1 className="w-10/12 mx-auto mt-10 text-5xl text-secondary font-heading font-bold">
+      <h1 className="w-11/12 mx-auto mt-10 text-5xl text-secondary font-heading font-bold">
         Manage your Products
       </h1>
       {/* <img
