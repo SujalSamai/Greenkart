@@ -35,7 +35,7 @@ function NavItems({ isModalView = false, router, isAdminView }) {
         {isAdminView
           ? adminNavOptions.map((item) => (
               <li
-                className="cursor-pointer block py-2 lowercase md:p-0 hover:text-gray-300 hover:scale-105 transition-custom border-b border-black rounded-sm md:border-none my-2"
+                className="cursor-pointer block py-2 lowercase md:p-0 md:px-10 hover:text-gray-300 hover:scale-105 transition-custom border-b border-black rounded-sm md:border-none my-2"
                 key={item.id}
                 onClick={() => {
                   router.push(item.path);

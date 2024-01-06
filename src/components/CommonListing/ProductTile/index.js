@@ -11,19 +11,19 @@ export default function ProductTile({ item }) {
       }}
       className="relative"
     >
-      <div className="overflow-hidden aspect-w-[1] aspect-h-[1] h-44 md:h-64">
+      <div className="overflow-hidden aspect-w-[1] aspect-h-[1] h-56 md:h-96 shadow-md">
         <img
           src={item.imageUrl}
           alt="product-image"
-          className="h-full w-full object-cover transition-custom group-hover:scale-125 md:border border-dashed border-secondary md:rounded-md"
+          className="h-full w-full object-cover transition-all ease-out duration-300 hover:scale-110"
         />
       </div>
       <div>
-        <h3 className="my-1 mx-1 min-w-[6rem] md:h-7 text-secondary text-sm md:text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">
+        <h3 className="mt-5 mb-2 mx-4 min-w-[6rem] md:h-8 text-secondary text-lg md:text-2xl font-bold whitespace-nowrap overflow-hidden text-ellipsis font-heading">
           {item.name}
         </h3>
       </div>
-      <p className="mx-1 min-w-[6rem] md:h-5 text-secondary/80 text-xs md:text-sm font-semibold  whitespace-nowrap overflow-hidden text-ellipsis">
+      <p className="mx-4 min-w-[6rem] md:h-5 text-secondary/80 text-xs md:text-sm font-semibold  whitespace-nowrap overflow-hidden text-ellipsis">
         {item.brand}
       </p>
       {item.onSale === "yes" ? (
@@ -33,7 +33,7 @@ export default function ProductTile({ item }) {
           </p>
         </div>
       ) : null}
-      <div className="mt-2 mb-3 mx-1 flex flex-col items-start justify-between">
+      <div className="mt-2 mb-3 mx-4 flex flex-col items-start justify-between">
         <div className="h-full flex justify-between">
           <p
             className={`mr-2 text-[0.65rem] md:text-sm font-semibold ${
