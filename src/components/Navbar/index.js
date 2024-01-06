@@ -5,7 +5,7 @@ import { adminNavOptions, navOptions } from "@/utils";
 import Cookies from "js-cookie";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { Fragment, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { HiMenuAlt1, HiUser } from "react-icons/hi";
 import {
   MdOutlinePowerSettingsNew,

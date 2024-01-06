@@ -10,6 +10,7 @@ import WhyUs from "@/components/HomePage/WhyUs";
 import Hero from "@/components/HomePage/Hero";
 import SaleCollection from "@/components/HomePage/SaleCollection";
 import Marquee from "@/components/Marquee";
+import Footer from "@/components/HomePage/Footer";
 
 export default function Home() {
   const { isAuthUser } = useContext(GlobalContext);
@@ -40,6 +41,7 @@ export default function Home() {
         <SaleCollection saleName="Diwali" products={products} />
         <Facts />
         <ShopByCategory />
+        <Footer />
       </section>
     </main>
   );
