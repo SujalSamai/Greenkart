@@ -50,7 +50,7 @@ export default function Footer() {
             </button>
           </div>
         </div>
-        <div className="md:flex md:flex-row md:justify-center">
+        <div className="flex flex-row justify-center">
           <div className="flex flex-col md:my-6 my-2 md:mr-20 mx-4 p-5">
             <h1 className="md:text-2xl text-xl text-secondary/90 font-bold flex font-heading mb-2">
               <GiShoppingBag className="mt-1 mr-1" />
